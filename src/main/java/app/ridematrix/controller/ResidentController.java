@@ -3,6 +3,7 @@ package app.ridematrix.controller;
 import app.ridematrix.entity.Resident;
 import app.ridematrix.service.ResidentService;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +37,12 @@ public class ResidentController
     //API to get resident details with name
     // ? -> means it can either return name or string msg
     @GetMapping("/getResidentByName")
-    public ResponseEntity<?> getResidentByName(@RequestParam(required = false) String fName,@RequestParam(required = false) String lName){
+    public ResponseEntity<?> getResidentByName(
+            @Pattern(regexp = "^[A-Za-z]*$", message = "First name should not contain numbers")
+            @RequestParam(required = false) String fName ,
+            @Pattern(regexp = "^[A-Za-z]*$", message = "Last name should not contain numbers")
+            @RequestParam(required = false) String lName)
+    {
         List<Resident> residentByName = residentService.getResidentByName(fName, lName);
         if (residentByName.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Resident not found with given name inputs.");
