@@ -9,6 +9,7 @@ import java.util.List;
 
 public interface ResidentRepo extends JpaRepository<Resident,Integer>
 {
+    //get resident by name jpql query
     @Query("SELECT r FROM Resident r WHERE " +
             "(:fName IS NULL OR r.fName = :fName) AND " +
             "(:lName IS NULL OR r.lName = :lName)")
