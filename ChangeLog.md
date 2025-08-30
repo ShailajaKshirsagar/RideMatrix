@@ -9,7 +9,6 @@ All notable changes to this project are documented in this file.
 
 - API GetresidentByName implemented , Tested and Pushed on github[VEHMS-M01-T0013]
 
-
 ## [0.1.0] - 2025-08-30
 ### Added
 - Created RideMatrix Spring Boot project. [VEHMS-M01-T001]
