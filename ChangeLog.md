@@ -1,6 +1,15 @@
 # Changelog
 All notable changes to this project are documented in this file.
 
+## [0.1.1] - 2025-08-31
+### Added
+- API Implemented For get resident by name.[VEHMS-M01-T0012]
+  - validation provided using Pattern and regex
+  - Error msg added if resident does not exist
+
+- API GetresidentByName implemented , Tested and Pushed on github[VEHMS-M01-T0013]
+
+
 ## [0.1.0] - 2025-08-30
 ### Added
 - Created RideMatrix Spring Boot project. [VEHMS-M01-T001]
@@ -12,6 +21,6 @@ All notable changes to this project are documented in this file.
 - API implemented to create Resident with Vehicals.[VEHMS-M01-T006]
     - Global Exception Added for mandatory feilds
     - Not null validation added for enum
--
+
 - Get all resident API implemented. [VEHMS-M01-T0010]
 - Getallresident API Tested and pushed. [VEHMS-M01-T0011]
