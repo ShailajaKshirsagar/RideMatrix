@@ -3,14 +3,14 @@ package app.ridematrix.controller;
 import app.ridematrix.entity.Resident;
 import app.ridematrix.service.ResidentService;
 import jakarta.validation.Valid;
+import lombok.Getter;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/Resident")
@@ -24,5 +24,12 @@ public class ResidentController
     public ResponseEntity<String> createResident(@Valid @RequestBody Resident resident){
         String msg = residentService.saveResident(resident);
         return new ResponseEntity<>(msg,HttpStatus.CREATED);
+    }
+
+    //API to get all resident along with their vehicle
+    @GetMapping("/getAllResidents")
+    public ResponseEntity<List<Resident>> getAllResident(){
+        List<Resident> residentList = residentService.getAllResidents();
+        return new ResponseEntity<>(residentList,HttpStatus.OK);
     }
 }
