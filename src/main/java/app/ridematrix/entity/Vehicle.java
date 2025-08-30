@@ -1,6 +1,9 @@
 package app.ridematrix.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,6 +17,7 @@ public class Vehicle
 {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "vehicle_seq")
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     @SequenceGenerator(
             name = "vehicle_seq",
             sequenceName = "vehicle_sequence",
@@ -21,9 +25,11 @@ public class Vehicle
             initialValue = 10000 // starting value for Vehicle IDs
     )
     private long id;
+    @NotNull(message = "Registration Number is Required")
     private String registrationNum;
     private String vColor;
 
+    @NotNull(message = "Vehicle Type is Required")
     @Enumerated(EnumType.STRING)
     private VehicleType vType;
 
@@ -33,7 +39,9 @@ public class Vehicle
         BIKE
     }
 
+    @JsonIgnore
     private LocalDateTime associationActivatedAt;
+    @JsonIgnore
     private LocalDateTime associationDeactivatedAt;
 
     private boolean isVehicleActive;
@@ -41,6 +49,7 @@ public class Vehicle
     // Many-to-one mapping with Resident
     @ManyToOne
     @JoinColumn(name = "resident_id")
+    @JsonIgnore
     private Resident resident;
 
 }

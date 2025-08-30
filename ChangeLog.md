@@ -9,3 +9,6 @@ All notable changes to this project are documented in this file.
 - Connection established properly without any error.[VEHMS-M01-T004]
 - Implemented Entities Resident and Vehicle .[VEHMS-M01-T005]
 - Tables created with mapping one to many.[VEHMS-M01-T006]
+- API implemented to create Resident with Vehicals.[VEHMS-M01-T006]
+    - Global Exception Added for mandatory feilds
+    - Not null validation added for enum
