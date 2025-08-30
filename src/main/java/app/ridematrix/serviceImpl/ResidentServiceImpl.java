@@ -41,4 +41,10 @@ public class ResidentServiceImpl implements ResidentService
         residentRepository.save(resident);
         return "Resident Saved";
     }
+
+    @Override
+    public List<Resident> getAllResidents() {
+        List<Resident> residentList= residentRepository.findAll();
+        return residentList;
+    }
 }
