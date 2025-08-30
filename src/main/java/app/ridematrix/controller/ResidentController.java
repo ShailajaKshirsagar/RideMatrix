@@ -32,4 +32,15 @@ public class ResidentController
         List<Resident> residentList = residentService.getAllResidents();
         return new ResponseEntity<>(residentList,HttpStatus.OK);
     }
+
+    //API to get resident details with name
+    // ? -> means it can either return name or string msg
+    @GetMapping("/getResidentByName")
+    public ResponseEntity<?> getResidentByName(@RequestParam(required = false) String fName,@RequestParam(required = false) String lName){
+        List<Resident> residentByName = residentService.getResidentByName(fName, lName);
+        if (residentByName.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Resident not found with given name inputs.");
+        }
+        return ResponseEntity.ok(residentByName);
+    }
 }
