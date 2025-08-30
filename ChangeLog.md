@@ -12,3 +12,6 @@ All notable changes to this project are documented in this file.
 - API implemented to create Resident with Vehicals.[VEHMS-M01-T006]
     - Global Exception Added for mandatory feilds
     - Not null validation added for enum
+-
+- Get all resident API implemented. [VEHMS-M01-T0010]
+- Getallresident API Tested and pushed. [VEHMS-M01-T0011]
