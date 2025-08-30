@@ -47,4 +47,10 @@ public class ResidentServiceImpl implements ResidentService
         List<Resident> residentList= residentRepository.findAll();
         return residentList;
     }
+
+    @Override
+    public List<Resident> getResidentByName(String fName, String lName) {
+      List<Resident> residentList = residentRepository.findResidentByName(fName, lName);
+      return residentList;
+    }
 }

@@ -9,4 +9,6 @@ public interface ResidentService
     String saveResident(Resident resident);
 
     List<Resident> getAllResidents();
+
+    List<Resident> getResidentByName(String fName,String lName);
 }
