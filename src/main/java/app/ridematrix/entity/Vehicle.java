@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -26,6 +28,10 @@ public class Vehicle
     )
     private long id;
     @NotNull(message = "Registration Number is Required")
+    @Pattern(
+            regexp = "^[A-Z0-9]{4}-[A-Z]{2}-\\d{4}$",
+            message = "Registration number must be in format XX-00-XX-0000 equal to 10"
+    )
     private String registrationNum;
     private String vColor;
 

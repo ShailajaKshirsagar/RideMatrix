@@ -1,18 +1,20 @@
 package app.ridematrix.controller;
 
 import app.ridematrix.dto.CreateVehicleRequest;
+import app.ridematrix.dto.GetResidentDataRequest;
+import app.ridematrix.entity.Resident;
 import app.ridematrix.entity.Vehicle;
+import app.ridematrix.service.ResidentService;
 import app.ridematrix.service.VehicleService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/vehicles")
@@ -21,6 +23,9 @@ public class VehicleController
 {
     @Autowired
     private VehicleService vehicleService;
+
+    @Autowired
+    private ResidentService residentService;
 
     //vehicle creation
     @PostMapping("/addVehicle")
@@ -31,4 +36,12 @@ public class VehicleController
         return new ResponseEntity<>(msg, HttpStatus.CREATED);
     }
 
+    //get user details only using registration number not vehicle details .
+    @GetMapping("/getUserData/{registrationNum}")
+    @Operation(summary = "Get user Details with Registration number")
+    public ResponseEntity<GetResidentDataRequest> getResidentDataByRegNum(
+            @Valid @PathVariable("registrationNum") String registrationNum){
+       GetResidentDataRequest getResidentbynum = vehicleService.getResidentByRegNum(registrationNum);
+       return new ResponseEntity<>(getResidentbynum,HttpStatus.OK);
+    }
 }
