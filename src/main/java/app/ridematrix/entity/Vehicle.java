@@ -49,7 +49,7 @@ public class Vehicle
     // Many-to-one mapping with Resident
     @ManyToOne
     @JoinColumn(name = "resident_id")
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Resident resident;
 
 }
