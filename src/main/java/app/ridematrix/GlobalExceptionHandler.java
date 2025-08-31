@@ -6,12 +6,22 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @RestControllerAdvice
-public class GlobalExceptionHandler
-{
-    //Handle validation error
+public class GlobalExceptionHandler {
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<String> handleValidationExceptions(MethodArgumentNotValidException ex) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Add mandatory fields");
+    public ResponseEntity<Object> handleValidationExceptions(MethodArgumentNotValidException ex) {
+        Map<String, String> errors = new HashMap<>();
+
+        ex.getBindingResult().getFieldErrors().forEach(error -> {
+            String fieldName = error.getField();
+            String errorMessage = error.getDefaultMessage();
+            errors.put(fieldName, errorMessage);
+        });
+        return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
     }
 }
+
