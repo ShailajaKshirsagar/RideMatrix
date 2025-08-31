@@ -2,6 +2,11 @@
 All notable changes to this project are documented in this file.
 
 ## [0.1.1] - 2025-08-31
+### Added
+- Create vehicle api added .[VEHMS-M01-T0015]
+- Vehicle DTO for saving vehicle with resident id.
+- Validation for vehicle registration number.
+
 ### Testing
 - Tested complete application and bugs resolved. [VEHMS-M01-T0014]
 ### Bugs resolved 
