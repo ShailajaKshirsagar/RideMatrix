@@ -18,6 +18,4 @@ public interface ResidentRepo extends JpaRepository<Resident,Integer>
             @Param("fName") String fName,
             @Param("lName") String lName
     );
-
-
 }

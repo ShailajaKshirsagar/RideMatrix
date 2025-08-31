@@ -2,7 +2,10 @@ package app.ridematrix.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -27,11 +30,14 @@ public class Resident {
     @NotNull(message = "Last name is Required")
     private String lName;
 
+    @Pattern(regexp = "^[A-Za-z0-9]+$", message = "Flat number must be alphanumeric")
     private String flatNo;
 
     @NotNull(message = "Mobile no is Required")
     private long mobNo;
 
+    //Email annotation for valid email
+    @Email(message = "Email should be valid")
     private String email;
 
     @NotNull(message = "Resident Type is Required")
@@ -45,5 +51,6 @@ public class Resident {
     }
     //one to many mapping
     @OneToMany(mappedBy = "resident", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Valid
     private List<Vehicle> vehicleList = new ArrayList<>();
 }
