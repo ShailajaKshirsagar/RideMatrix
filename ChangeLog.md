@@ -21,11 +21,16 @@ All notable changes to this project are documented in this file.
 ### Added
 - Getallresident API Tested and pushed. [VEHMS-M01-T0011]
 - Get all resident API implemented. [VEHMS-M01-T0010]
-
+- Tested Swagger doc and pushed on Git.[VEHMS-M01-T009]
+- Swagger documentation added.[VEHMS-M01-T008]
+    - @Operation — Describe what the API does
+    - @Parameter — Describe API method parameters
+    - @Tag — Group related APIs
 
 - API implemented to create Resident with Vehicals.[VEHMS-M01-T007]
     - Global Exception Added for mandatory feilds
     - Not null validation added for enum
+    - 
 - Tables created with mapping one to many.[VEHMS-M01-T006]
 - Implemented Entities Resident and Vehicle .[VEHMS-M01-T005]
 - Connection established properly without any error.[VEHMS-M01-T004]
