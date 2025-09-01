@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>app.ridematrix</groupId>
 	<artifactId>RideMatrix_VMS</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.0</version>
 	<name>RideMatrix_VMS</name>
 	<description>Vehicle management system</description>
 	<url/>
