@@ -1,52 +1,45 @@
 # Changelog
 All notable changes to this project are documented in this file.
+## [0.1.0] - 2025-08-1
 
-## [0.1.1] - 2025-08-31
+## [0.0.1] - 2025-08-30
+
 ### Added
-- API to get user details only by registration number.[VEHMS-M01-T0017]
-    - Created DTO For resident.
-    - Custom Exceptions added.
-    - Global Exception added.
-    - Validation on registration number.
-  
-- Tested and pushed. [VEHMS-M01-T0016]
-- Create vehicle api added .[VEHMS-M01-T0015]
-- Vehicle DTO for saving vehicle with resident id.
-- Validation for vehicle registration number.
+- API to get user details by registration number. [VEHMS-M01-T0017]
+  - Resident DTO created.
+  - Custom and global exceptions added.
+  - Validation on registration number.
+- API to create a vehicle with resident ID. [VEHMS-M01-T0015]
+  - Vehicle DTO added.
+  - Validation for vehicle registration number.
+- API to get resident by name. [VEHMS-M01-T0012] [VEHMS-M01-T0013]
+  - Regex-based name validation.
+  - Error message if resident does not exist.
+- API to get all residents. [VEHMS-M01-T0010] [VEHMS-M01-T0011]
+- API to create resident with vehicles. [VEHMS-M01-T007]
+  - Global exception for mandatory fields.
+  - Not-null validation for enums.
+- Swagger documentation added. [VEHMS-M01-T008] [VEHMS-M01-T009]
+  - @Operation – Describe API functionality.
+  - @Parameter – Document API method parameters.
+  - @Tag – Group related APIs.
+
+### Changed
+- Endpoint names standardized to follow REST conventions.
+- Validation added for nested vehicle data.
+- Format validations added:
+  - Email format validation to avoid invalid emails.
+  - Flat number and mobile number format validation.
+
+### Fixed
+- Bugs found during application testing resolved. [VEHMS-M01-T0014]
 
 ### Testing
-- Tested complete application and bugs resolved. [VEHMS-M01-T0014]
-### Bugs resolved 
-- Endpoint naming non standard changed .
-- Validation added on nested vehicles.
-- Email validation added to avoid invalid email format.
-- Flat no , mobile no format validated.
+- Full application tested and pushed.  [VEHMS-M01-T0016] [VEHMS-M01-T0018]
 
-### Added
-- API GetresidentByName implemented , Tested and Pushed on github[VEHMS-M01-T0013]
-
-- API Implemented For get resident by name.[VEHMS-M01-T0012]
-  - validation provided using Pattern and regex
-  - Error msg added if resident does not exist
-  
-## [0.1.0] - 2025-08-30
-### Added
-- Getallresident API Tested and pushed. [VEHMS-M01-T0011]
-- Get all resident API implemented. [VEHMS-M01-T0010]
-- Tested Swagger doc and pushed on Git.[VEHMS-M01-T009]
-- Swagger documentation added.[VEHMS-M01-T008]
-    - @Operation — Describe what the API does
-    - @Parameter — Describe API method parameters
-    - @Tag — Group related APIs
-
-- API implemented to create Resident with Vehicals.[VEHMS-M01-T007]
-    - Global Exception Added for mandatory feilds
-    - Not null validation added for enum
-    - 
-- Tables created with mapping one to many.[VEHMS-M01-T006]
-- Implemented Entities Resident and Vehicle .[VEHMS-M01-T005]
-- Connection established properly without any error.[VEHMS-M01-T004]
-- Spring Boot datasource configured for PostgreSQL (JDBC URL, username, password, PostgreSQL dialect). [VEHMS-M01-T003]
-- Local PostgreSQL setup and pgAdmin verification; database ridematrix_vms_db created. [VEHMS-M01-T002]
-- Created RideMatrix Spring Boot project. [VEHMS-M01-T001]
-
+### Infrastructure
+- Tables created with one-to-many mapping between Resident and Vehicle. [VEHMS-M01-T006]
+- Entities implemented: Resident and Vehicle. [VEHMS-M01-T005]
+- Spring Boot configured for PostgreSQL: datasource, JDBC URL, username/password, dialect. [VEHMS-M01-T003]
+- PostgreSQL local setup verified via pgAdmin; `ridematrix_vms_db` database created. [VEHMS-M01-T002]
+- RideMatrix Spring Boot project initialized. [VEHMS-M01-T001]
