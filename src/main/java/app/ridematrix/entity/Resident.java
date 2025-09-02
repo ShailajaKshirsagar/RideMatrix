@@ -30,7 +30,7 @@ public class Resident {
     @NotNull(message = "Last name is Required")
     private String lName;
 
-    @Pattern(regexp = "^[A-Za-z0-9]+$", message = "Flat number must be alphanumeric")
+    @Pattern(regexp = "^[A-Za-z0-9-]+$", message = "Flat number must be alphanumeric with optional hyphens")
     private String flatNo;
 
     @NotNull(message = "Mobile no is Required")
@@ -53,4 +53,9 @@ public class Resident {
     @OneToMany(mappedBy = "resident", cascade = CascadeType.ALL, orphanRemoval = true)
     @Valid
     private List<Vehicle> vehicleList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "resident")
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    //not passing visitors in the resident info.
+    private List<Visitors> visitorsList = new ArrayList<>();
 }
