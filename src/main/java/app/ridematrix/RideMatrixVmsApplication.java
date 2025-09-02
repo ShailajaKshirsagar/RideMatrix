@@ -9,5 +9,4 @@ public class RideMatrixVmsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RideMatrixVmsApplication.class, args);
 	}
-
 }

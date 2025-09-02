@@ -38,7 +38,6 @@ public class Vehicle
     @NotNull(message = "Vehicle Type is Required")
     @Enumerated(EnumType.STRING)
     private VehicleType vType;
-
     public enum VehicleType{
         CAR,
         MOPED,
@@ -55,7 +54,8 @@ public class Vehicle
     // Many-to-one mapping with Resident
     @ManyToOne
     @JoinColumn(name = "resident_id")
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    //@JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @JsonIgnore
     private Resident resident;
 
 }

@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ResidentRepo extends JpaRepository<Resident,Integer>
 {
@@ -18,4 +19,8 @@ public interface ResidentRepo extends JpaRepository<Resident,Integer>
             @Param("fName") String fName,
             @Param("lName") String lName
     );
+
+    //find by flat no
+    @Query("SELECT r FROM Resident r WHERE LOWER(r.flatNo) = LOWER(:flatNo)")
+    Optional<Resident> findByFlatNo(@Param("flatNo") String flatNo);
 }
