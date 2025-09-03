@@ -19,13 +19,8 @@ public interface VisitorRepo extends JpaRepository<Visitors,Integer>
     Optional<Visitors> findVisitorByRegNum(@Param("vehicleRegNumber") String vehicleRegNumber);
 
     //query to update end time when user is not active
-//    @Transactional
-//    @Modifying
-//    @Query(value = "UPDATE Visitors v SET v.timeOut = :v.timeOut WHERE v.vehicleRegNum = :vehicleRegNum AND v.isActiveVisitor=false")
-//    Visitors updateOutTime(@Param("vehicleRegNum") String vehicleRegNum,@Param("timeOut") Visitors timeOut);
     @Modifying
     @Transactional
     @Query("UPDATE Visitors v SET v.timeOut = :timeOut, v.isActiveVisitor = false WHERE v.vehicleRegNumber = :vehicleRegNumber AND v.isActiveVisitor = true")
     int updateOutTime(@Param("vehicleRegNumber") String vehicleRegNumber, @Param("timeOut") LocalDateTime timeOut);
-
 }
