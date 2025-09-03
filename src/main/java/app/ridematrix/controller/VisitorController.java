@@ -43,7 +43,7 @@ public class VisitorController
         return new ResponseEntity<>(responseDTO,HttpStatus.OK);
     }
 
-    //API to update the end time of visitor by vehicle number
+    //API to update the end time of visitor by vehicle number using patch
     @PatchMapping("/updateOutTime/{vehicleRegNum}")
     public ResponseEntity<String> updateTimeOut(@PathVariable String vehicleRegNum) {
 
