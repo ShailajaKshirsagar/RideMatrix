@@ -82,6 +82,7 @@ public class VisitorsServiceImpl implements VisitorService {
         throw new RuntimeException("Visitor not found with vehicle registration number: " + vehicleRegNum);
     }
 
+    //update out time by vehicle num
     @Override
     public String updateOutTime(String vehicleRegNum) {
             LocalDateTime now = LocalDateTime.now(); // auto time
