@@ -2,8 +2,9 @@
 All notable changes to this project are documented in this file.
 ## [0.1.0] - 2025-08-1
 ### Added
-- API- POST - new visitor details .[VEHMS-M02-T0017]
-- 
+- API- POST - new visitor details .[VEHMS-M02-T0020-21]
+- API- GET - Visitors details by registeration number[VEHMS-M01-T0022-23]
+- API- update endtime of visitor[VEHMS-M01-T0024-25]
 ## [0.0.1] - 2025-08-30
 
 ### Added
