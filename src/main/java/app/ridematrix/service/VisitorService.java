@@ -10,6 +10,6 @@ public interface VisitorService
 
     VisitorResponseDTO findVisitorResidentByRegNum(String vehicleRegNum);
 
-    //update out time
+    //update out time by vehicle num
     String updateOutTime(String vehicleRegNum);
 }
