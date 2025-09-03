@@ -1,6 +1,8 @@
 package app.ridematrix.serviceImpl;
 
+import app.ridematrix.dto.GetResidentDataRequest;
 import app.ridematrix.dto.VisitorRequestDto;
+import app.ridematrix.dto.VisitorResponseDTO;
 import app.ridematrix.entity.Resident;
 import app.ridematrix.entity.Visitors;
 import app.ridematrix.repository.ResidentRepo;
@@ -9,7 +11,6 @@ import app.ridematrix.service.VisitorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -41,5 +42,51 @@ public class VisitorsServiceImpl implements VisitorService {
         visitorRepository.save(visitors);
 
         return "Visitor saved";
+    }
+
+    @Override
+    public VisitorResponseDTO findVisitorResidentByRegNum(String vehicleRegNum) {
+
+        Optional<Visitors> visitorByRegNum = visitorRepository.findVisitorByRegNum(vehicleRegNum);
+        if(visitorByRegNum.isPresent()){
+
+           Visitors visitors = visitorByRegNum.get(); // find associated visitor use get
+           Resident resident = visitorByRegNum.get().getResident(); //find associated resident
+
+           //mapping data in dto
+           VisitorResponseDTO dto = new VisitorResponseDTO();
+            dto.setVisitorName(visitors.getVisitorName());
+            dto.setVisitorType(visitors.getVisitorType());
+            dto.setVehicleName(visitors.getVehicleName());
+            dto.setPhoneNum(visitors.getPhoneNum());
+            dto.setVehicleRegNum(visitors.getVehicleRegNumber());
+            dto.setTimeIn(visitors.getTimeIn());
+            dto.setTimeOut(visitors.getTimeOut());
+            dto.setVisitPurpose(visitors.getVisitPurpose());
+            dto.setActiveVistor(visitors.isActiveVisitor());
+
+           //mapping data in dto
+            GetResidentDataRequest residentData = new GetResidentDataRequest();
+            residentData.setId(resident.getId());
+            residentData.setFName(resident.getFName());
+            residentData.setLName(resident.getLName());
+            residentData.setFlatNo(resident.getFlatNo());
+            residentData.setMobNo(resident.getMobNo());
+            residentData.setEmail(resident.getEmail());
+            residentData.setResidentType(resident.getResidentType());
+
+            dto.setGetResidentDataRequest(residentData);
+
+            return dto;
+        }
+        throw new RuntimeException("Visitor not found with vehicle registration number: " + vehicleRegNum);
+    }
+
+    @Override
+    public String updateOutTime(String vehicleRegNum) {
+            LocalDateTime now = LocalDateTime.now(); // auto time
+            int updated = visitorRepository.updateOutTime(vehicleRegNum, now);
+            return "Time out updated";
+
     }
 }
