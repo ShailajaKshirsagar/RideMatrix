@@ -14,7 +14,7 @@ All notable changes to this project are documented in this file.
 - Global exception handling improved using `@RestControllerAdvice`.
 - Logging structure added to key layers using SLF4J.
 
-## [0.1.0] - 2025-08-01
+## [0.1.0] - 2025-08-31
 ### Added
 - API - POST - New visitor details. [VEHMS-M02-T0020-21]
 - API - GET - Visitors details by registration number. [VEHMS-M01-T0022-23]
