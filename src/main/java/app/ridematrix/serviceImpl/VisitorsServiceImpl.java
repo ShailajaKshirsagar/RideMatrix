@@ -88,18 +88,17 @@ public class VisitorsServiceImpl implements VisitorService {
     //update out time by vehicle num
     @Override
     public String updateOutTime(String vehicleRegNum) {
-        LocalDateTime now = LocalDateTime.now(); // auto time
-        int updated = visitorRepository.updateOutTime(vehicleRegNum, now);
+//        LocalDateTime now = LocalDateTime.now(); // auto time
+//        int updated = visitorRepository.updateOutTime(vehicleRegNum, now);
+        Optional<Visitors> visitor = visitorRepository.findVisitorByRegNum(vehicleRegNum);
 
-//        Optional<Visitors> visitor = visitorRepository.findVisitorByRegNum(vehicleRegNum);
-//
-//        if (visitor.isPresent()) {
-//            Visitors v = visitor.get();
-//            v.setVisitDuration(Duration.between(v.getTimeIn(), now));
-//            visitorRepository.save(v);
-//        }
-        return "Time out updated and Duration saved";
-
+        if (visitor.isPresent()) {
+            Visitors v = visitor.get();
+            v.setTimeOut(LocalDateTime.now());
+            visitorRepository.save(v);
+            return "Visitor exit time and duration updated";
+        }
+        throw new RuntimeException("Visitor not found with vehicle registration number: " + vehicleRegNum);
     }
 
     @Override
