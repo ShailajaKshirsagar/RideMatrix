@@ -6,7 +6,7 @@ import app.ridematrix.entity.Visitors;
 public class VisitorMapper {
 
     public static VisitorResponseDTO toDto(Visitors visitor) {
-        return VisitorResponseDTO.builder()
+        VisitorResponseDTO.VisitorResponseDTOBuilder builder = VisitorResponseDTO.builder()
                 .visitorName(visitor.getVisitorName())
                 .vehicleName(visitor.getVehicleName())
                 .vehicleRegNum(visitor.getVehicleRegNumber())
@@ -15,7 +15,12 @@ public class VisitorMapper {
                 .timeIn(visitor.getTimeIn())
                 .timeOut(visitor.getTimeOut())
                 .phoneNum(visitor.getPhoneNum())
-                .activeVistor(visitor.isActiveVisitor())
-                .build();
+                .activeVistor(visitor.isActiveVisitor());
+
+        // Add flatNo if resident is present
+        if (visitor.getResident() != null) {
+            builder.flatNo(visitor.getResident().getFlatNo());
+        }
+        return builder.build();  // Build at the end
     }
 }
