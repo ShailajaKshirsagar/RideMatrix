@@ -30,7 +30,6 @@ public class VisitorRequestDto
         private LocalDateTime timeIn;
         @JsonProperty(access = JsonProperty.Access.READ_ONLY)
         private LocalDateTime timeOut;
-        private boolean activeVisitor;
         private Visitors.VisitorType visitorType;
         private String flatNo;
 }
