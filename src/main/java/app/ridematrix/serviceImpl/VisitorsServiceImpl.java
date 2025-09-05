@@ -96,8 +96,8 @@ public class VisitorsServiceImpl implements VisitorService {
     @Override
     public List<VisitorResponseDTO> findVisitorType(List<Visitors.VisitorType> visitorType) {
         List<Visitors> visitors;
-        if (visitorType.isEmpty() || visitorType==null){
-            visitors = visitorRepository.findAll();
+        if (visitorType == null || visitorType.isEmpty()){
+            visitors = visitorRepository.findAllVisitors();
         } else{
             visitors = visitorRepository.findVisitorType(visitorType);
         }
