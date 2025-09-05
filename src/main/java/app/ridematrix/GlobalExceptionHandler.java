@@ -2,6 +2,7 @@ package app.ridematrix;
 
 import app.ridematrix.exception.InvalidRegistrationNum;
 import app.ridematrix.exception.ResourceNotFoundException;
+import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -34,6 +35,13 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(InvalidRegistrationNum.class)
     public ResponseEntity<String> invalidRegNum(InvalidRegistrationNum ex){
         return new ResponseEntity<>(ex.getMessage(),HttpStatus.NOT_FOUND);
+    }
+
+    //To handle database Access Exception
+    @ExceptionHandler(DataAccessException.class)
+    public ResponseEntity<String> HandleDatabaseException(DataAccessException ex) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body("Database operation failed. Please try again later.");
     }
 }
 
