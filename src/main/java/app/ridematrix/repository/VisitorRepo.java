@@ -29,6 +29,9 @@ public interface VisitorRepo extends JpaRepository<Visitors,Integer>
     //for finding the type of visitor
     @Query("SELECT v FROM Visitors v WHERE v.isActiveVisitor = true AND v.visitorType IN :visitorType")
     List<Visitors> findVisitorType(@Param("visitorType")List<Visitors.VisitorType> visitorType);
+
+    @Query("SELECT v FROM Visitors v WHERE v.isActiveVisitor = true")
+    List<Visitors> findAllVisitors();
 }
 //while writing jpql query -> use entities exact field name
 //in case of native query -> use database column name

@@ -1,6 +1,7 @@
 package app.ridematrix.dto;
 
 import app.ridematrix.entity.Visitors;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -11,8 +12,10 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@JsonInclude(JsonInclude.Include.NON_NULL)
 //Builder annotation to map dto to entity using mapper -> converter->visitorMapper
 //This dto is for get vistor details and REsident details by reg number
+//This json include will exclude all fields that are null from the response. but will display if it has value
 public class VisitorResponseDTO
 {
     private String visitorName;
@@ -25,4 +28,6 @@ public class VisitorResponseDTO
     private long phoneNum;
     public boolean activeVistor;
     private GetResidentDataRequest getResidentDataRequest;
+    private String flatNo;
+
 }
