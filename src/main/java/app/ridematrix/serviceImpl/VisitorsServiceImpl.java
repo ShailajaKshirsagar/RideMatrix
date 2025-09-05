@@ -12,6 +12,7 @@ import app.ridematrix.service.VisitorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -89,7 +90,15 @@ public class VisitorsServiceImpl implements VisitorService {
     public String updateOutTime(String vehicleRegNum) {
         LocalDateTime now = LocalDateTime.now(); // auto time
         int updated = visitorRepository.updateOutTime(vehicleRegNum, now);
-        return "Time out updated";
+
+//        Optional<Visitors> visitor = visitorRepository.findVisitorByRegNum(vehicleRegNum);
+//
+//        if (visitor.isPresent()) {
+//            Visitors v = visitor.get();
+//            v.setVisitDuration(Duration.between(v.getTimeIn(), now));
+//            visitorRepository.save(v);
+//        }
+        return "Time out updated and Duration saved";
 
     }
 
