@@ -2,6 +2,7 @@ package app.ridematrix.serviceImpl;
 
 import app.ridematrix.entity.Resident;
 import app.ridematrix.entity.Vehicle;
+import app.ridematrix.entity.Visitors;
 import app.ridematrix.repository.ResidentRepo;
 import app.ridematrix.repository.VehicleRepo;
 import app.ridematrix.service.ResidentService;
@@ -28,11 +29,11 @@ public class ResidentServiceImpl implements ResidentService
 
         if (vehicles != null && !vehicles.isEmpty()) {
             for (Vehicle vehicle : vehicles) {
-                vehicle.setResident(resident); // set back-reference
+                vehicle.setResident(resident);
 
                 if (vehicle.isVehicleActive()) {
                     vehicle.setAssociationActivatedAt(LocalDateTime.now());
-                    vehicle.setAssociationDeactivatedAt(null); // optional reset
+                    vehicle.setAssociationDeactivatedAt(null);
                 } else {
                     vehicle.setAssociationDeactivatedAt(LocalDateTime.now());
                 }
