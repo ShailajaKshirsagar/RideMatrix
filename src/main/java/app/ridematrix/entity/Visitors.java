@@ -62,7 +62,22 @@ public class Visitors {
     @JoinColumn(name = "resident_id")
     private Resident resident;
 
-    //Visit durartion
-//    @Column(name = "visit_duration")
-//    private Duration visitDuration;}
+    //visit duration
+    private String visitDuration;
+
+    //calculatevisitduration-> because here we want output as HH MM
+    private void calculateVisitDuration(){
+        if(timeIn!= null && timeOut!=null){
+            Duration duration = Duration.between(timeIn,timeOut);
+            long hours = duration.toHours();
+            long minutes = duration.toMinutes() % 60;
+            this.visitDuration = String.format("%02d:%02d", hours, minutes);
+        }
+    }
+
+    public void setTimeOut(LocalDateTime timeOut) {
+        this.timeOut = timeOut;
+        calculateVisitDuration();
+    }
+
 }
