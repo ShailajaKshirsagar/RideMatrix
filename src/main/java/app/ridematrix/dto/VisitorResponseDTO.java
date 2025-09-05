@@ -1,15 +1,17 @@
 package app.ridematrix.dto;
 
 import app.ridematrix.entity.Visitors;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Setter
 @Getter
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+//Builder annotation to map dto to entity using mapper -> converter->visitorMapper
 //This dto is for get vistor details and REsident details by reg number
 public class VisitorResponseDTO
 {
