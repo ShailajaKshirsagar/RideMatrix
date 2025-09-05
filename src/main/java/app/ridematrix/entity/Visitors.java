@@ -1,5 +1,6 @@
 package app.ridematrix.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -38,7 +39,14 @@ public class Visitors
 
     @NotNull(message = "Phone number is required")
     private long phoneNum;
+
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private boolean isActiveVisitor;
+    //set by default value true of isactivisitor while saving it
+    @PrePersist
+    protected void onCreate(){
+        this.isActiveVisitor = true;
+    }
 
     @Enumerated(EnumType.STRING)
     private VisitorType visitorType;
@@ -46,6 +54,7 @@ public class Visitors
         GUEST,
         DELIVERY
     }
+
     //many to one mapped with resident
     @ManyToOne
     @JoinColumn(name = "resident_id")
