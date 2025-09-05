@@ -8,6 +8,7 @@ All notable changes to this project are documented in this file.
   - Returns flat number from associated Resident
   - Swagger integration with enum dropdown
   - Global exception handler for DB and general errors
+- Upgrade Visitor entity with duration field. [VEHMS-M02-T0020-28]
 
 ### Changed
 - `VisitorMapper` updated to include flat number from `Resident` entity.
