@@ -1,5 +1,6 @@
 package app.ridematrix.serviceImpl;
 
+import app.ridematrix.converter.VisitorMapper;
 import app.ridematrix.dto.GetResidentDataRequest;
 import app.ridematrix.dto.VisitorRequestDto;
 import app.ridematrix.dto.VisitorResponseDTO;
@@ -12,7 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class VisitorsServiceImpl implements VisitorService {
@@ -32,7 +35,6 @@ public class VisitorsServiceImpl implements VisitorService {
         visitors.setVisitorName(dto.getVisitorName());
         visitors.setVehicleRegNumber(dto.getVehicleRegNumber());
         visitors.setVisitorType(dto.getVisitorType());
-        visitors.setActiveVisitor(dto.isActiveVisitor());
         visitors.setTimeIn(LocalDateTime.now());
         visitors.setPhoneNum(dto.getPhoneNum());
         visitors.setVisitPurpose(dto.getVisitPurpose());
@@ -48,13 +50,13 @@ public class VisitorsServiceImpl implements VisitorService {
     public VisitorResponseDTO findVisitorResidentByRegNum(String vehicleRegNum) {
 
         Optional<Visitors> visitorByRegNum = visitorRepository.findVisitorByRegNum(vehicleRegNum);
-        if(visitorByRegNum.isPresent()){
+        if (visitorByRegNum.isPresent()) {
 
-           Visitors visitors = visitorByRegNum.get(); // find associated visitor use get
-           Resident resident = visitorByRegNum.get().getResident(); //find associated resident
+            Visitors visitors = visitorByRegNum.get(); // find associated visitor use get
+            Resident resident = visitorByRegNum.get().getResident(); //find associated resident
 
-           //mapping data in dto
-           VisitorResponseDTO dto = new VisitorResponseDTO();
+            //mapping data in dto
+            VisitorResponseDTO dto = new VisitorResponseDTO();
             dto.setVisitorName(visitors.getVisitorName());
             dto.setVisitorType(visitors.getVisitorType());
             dto.setVehicleName(visitors.getVehicleName());
@@ -65,7 +67,7 @@ public class VisitorsServiceImpl implements VisitorService {
             dto.setVisitPurpose(visitors.getVisitPurpose());
             dto.setActiveVistor(visitors.isActiveVisitor());
 
-           //mapping data in dto
+            //mapping data in dto
             GetResidentDataRequest residentData = new GetResidentDataRequest();
             residentData.setId(resident.getId());
             residentData.setFName(resident.getFName());
@@ -85,9 +87,23 @@ public class VisitorsServiceImpl implements VisitorService {
     //update out time by vehicle num
     @Override
     public String updateOutTime(String vehicleRegNum) {
-            LocalDateTime now = LocalDateTime.now(); // auto time
-            int updated = visitorRepository.updateOutTime(vehicleRegNum, now);
-            return "Time out updated";
+        LocalDateTime now = LocalDateTime.now(); // auto time
+        int updated = visitorRepository.updateOutTime(vehicleRegNum, now);
+        return "Time out updated";
 
+    }
+
+    @Override
+    public List<VisitorResponseDTO> findVisitorType(List<Visitors.VisitorType> visitorType) {
+        List<Visitors> visitors;
+        if (visitorType.isEmpty() || visitorType==null){
+            visitors = visitorRepository.findAll();
+        } else{
+            visitors = visitorRepository.findVisitorType(visitorType);
+        }
+        // here we have to convert visitors into visitorresponse
+        return visitors.stream()
+                .map(VisitorMapper::toDto)
+                .collect(Collectors.toList());
     }
 }
