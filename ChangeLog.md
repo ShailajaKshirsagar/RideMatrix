@@ -1,5 +1,17 @@
 # Changelog
 All notable changes to this project are documented in this file.
+## [0.2.0] - 2025-09-06
+### Added
+- Scheduler - Automatically stores visitor history backup in Excel format daily at 11 PM.[VEHMS-M02-T031]
+  - Excel files named as `visitors_history_log_DDMMYYYY.xlsx`
+  - Stored in `D:/visitors_log/`
+  - Folder is auto-created if not present
+- Excel export includes visitor and associated resident data.
+- Integrated Apache POI for Excel export.
+
+### Changed
+- File naming and folder creation logic added to scheduler layer.
+- DTO mapping extended for Excel export.
 
 ## [0.1.1] - 2025-09-05
 ### Added
