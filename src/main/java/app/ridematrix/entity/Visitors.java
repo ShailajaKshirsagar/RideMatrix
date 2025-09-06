@@ -9,7 +9,6 @@ import lombok.Setter;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 @Entity
 @Setter
@@ -65,19 +64,23 @@ public class Visitors {
     //visit duration
     private String visitDuration;
 
-    //calculatevisitduration-> because here we want output as HH MM
-    private void calculateVisitDuration(){
-        if(timeIn!= null && timeOut!=null){
-            Duration duration = Duration.between(timeIn,timeOut);
-            long hours = duration.toHours();
-            long minutes = duration.toMinutes() % 60;
-            this.visitDuration = String.format("%02d:%02d", hours, minutes);
-        }
-    }
-
     public void setTimeOut(LocalDateTime timeOut) {
         this.timeOut = timeOut;
         calculateVisitDuration();
     }
+
+    //calculatevisitduration-> because here we want output as HH MM
+    public String calculateVisitDuration(){
+        if(timeIn!= null && timeOut!=null){
+            Duration duration = Duration.between(timeIn,timeOut);
+            long hours = duration.toHours();
+            long minutes = duration.toMinutes() % 60;
+            String durationString = String.format("%dH:%dH", hours, minutes);
+            this.visitDuration = durationString;
+            return durationString;
+        }
+        return null;
+    }
+
 
 }
