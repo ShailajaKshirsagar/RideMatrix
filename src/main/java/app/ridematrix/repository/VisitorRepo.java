@@ -32,6 +32,10 @@ public interface VisitorRepo extends JpaRepository<Visitors,Integer>
 
     @Query("SELECT v FROM Visitors v WHERE v.isActiveVisitor = true")
     List<Visitors> findAllVisitors();
+
+    //find visitor with null visitDuration
+    @Query("SELECT v FROM Visitors v WHERE v.visitDuration IS null")
+    List<Visitors> findVisitorWithNullVisitDuration();
 }
 //while writing jpql query -> use entities exact field name
 //in case of native query -> use database column name
