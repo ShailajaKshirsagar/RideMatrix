@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 //Builder annotation to map dto to entity using mapper -> converter->visitorMapper
 //This dto is for get vistor details and REsident details by reg number
 //This json include will exclude all fields that are null from the response. but will display if it has value
+//mapper in converter package
 public class VisitorResponseDTO
 {
     private String visitorName;
