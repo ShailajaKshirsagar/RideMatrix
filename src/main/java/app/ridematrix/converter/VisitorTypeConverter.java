@@ -12,7 +12,6 @@ public class VisitorTypeConverter implements Converter<String, Visitors.VisitorT
 
     @Override
     public Visitors.VisitorType convert(String source) {
-
         try{
             return Visitors.VisitorType.valueOf(source.trim().toUpperCase());
         }
