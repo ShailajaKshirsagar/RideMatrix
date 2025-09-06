@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>app.ridematrix</groupId>
 	<artifactId>RideMatrix_VMS</artifactId>
-	<version>0.1.1</version>
+	<version>0.2.0</version>
 	<name>RideMatrix_VMS</name>
 	<description>Vehicle management system</description>
 	<url/>
@@ -67,6 +67,18 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<!-- To read Excel data		-->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>4.1.2</version>
 		</dependency>
 	</dependencies>
 
