@@ -66,7 +66,7 @@ public class VisitorController
     public ResponseEntity<List<VisitorResponseDTO>> getAllActiveVisitors(
             @Parameter(description = " GUEST or DELIVERY or BOTH")
             @RequestParam(required = false) List<Visitors.VisitorType> visitorType){
-        //created config class to convert string into enum or map to enum
+        //created converter class to convert string into enum or map to enum
 
         List<VisitorResponseDTO> activeVisitorList = visitorService.findVisitorType(visitorType);
         return new ResponseEntity<>(activeVisitorList,HttpStatus.OK);
