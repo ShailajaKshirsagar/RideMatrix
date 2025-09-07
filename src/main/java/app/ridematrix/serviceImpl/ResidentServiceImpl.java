@@ -21,6 +21,7 @@ public class ResidentServiceImpl implements ResidentService
     @Autowired
     private VehicleRepo vehicleRepository;
 
+
     @Override
     public String saveResident(Resident resident) {
         //need to save the vehicle activation deactivation time as well
@@ -30,7 +31,6 @@ public class ResidentServiceImpl implements ResidentService
         if (vehicles != null && !vehicles.isEmpty()) {
             for (Vehicle vehicle : vehicles) {
                 vehicle.setResident(resident);
-
                 if (vehicle.isVehicleActive()) {
                     vehicle.setAssociationActivatedAt(LocalDateTime.now());
                     vehicle.setAssociationDeactivatedAt(null);
