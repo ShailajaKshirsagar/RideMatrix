@@ -39,7 +39,7 @@ public class ApplicationScheduler
     }
 
     //Scheduler to save backup of visitor data in excel on local drive
-    @Scheduled(fixedRate = 6000)
+    @Scheduled(cron = "0 0 23 * * *")
     public void visitorDataInExcel() {
         try {
             List<Visitors> visitors = visitorRepository.findAll();
@@ -48,7 +48,6 @@ public class ApplicationScheduler
                     .collect(Collectors.toList());
 
             String currentDate = LocalDate.now().format(DateTimeFormatter.ofPattern("ddMMyyyy"));
-
             String folderPath = "D:/visitors_log";
             File exportFolder = new File(folderPath);
             if (!exportFolder.exists()) {
