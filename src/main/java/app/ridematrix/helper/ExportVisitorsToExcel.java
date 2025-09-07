@@ -1,6 +1,7 @@
 package app.ridematrix.helper;
 
 import app.ridematrix.dto.VisitorExcelDataDTO;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -15,9 +16,11 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+@Slf4j
 public class ExportVisitorsToExcel
 {
     public static void visitorsToExcel(List<VisitorExcelDataDTO> visitors, FileOutputStream fos) throws IOException{
+        log.info("Starting export of {} visitors to Excel", visitors.size());
 
         String coumns[] = {"Visitor Name", "Vehicle Number", "Visitor Type","Phone Num","Vehicle Name","Visit Purpose",
                 "Time In", "Time out ", "Visit Duration","Flat No", "Resident Name"};
@@ -57,9 +60,11 @@ public class ExportVisitorsToExcel
             }
                 //write data in output stream
                 workbook.write(fos);
+            log.info("Successfully exported visitor data to Excel");
 
-            } catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
+            log.error("Failed to export visitor data to Excel", e);
             throw e;
         }
     }
