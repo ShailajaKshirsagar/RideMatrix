@@ -12,6 +12,7 @@ import app.ridematrix.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
@@ -33,8 +34,16 @@ public class VehicleServiceImpl implements VehicleService
             Vehicle vehicle = new Vehicle();
             vehicle.setRegistrationNum(request.getRegistrationNum());
             vehicle.setVColor(request.getVcolor());
-            vehicle.setVType(Vehicle.VehicleType.valueOf(request.getVtype())); // assumes valid string input
+            vehicle.setVType(Vehicle.VehicleType.valueOf(request.getVtype()));
             vehicle.setVehicleActive(request.isVehicleActive());
+            // Set activation/deactivation time based on vehicle active status
+            if (request.isVehicleActive()) {
+                vehicle.setAssociationActivatedAt(LocalDateTime.now());
+                vehicle.setAssociationDeactivatedAt(null);
+            } else {
+                vehicle.setAssociationDeactivatedAt(LocalDateTime.now());
+                vehicle.setAssociationActivatedAt(null);
+            }
             vehicle.setResident(residentOpt.get());
             vehicleRepository.save(vehicle);
             return "Vehicle saved successfully.";
@@ -54,15 +63,15 @@ public class VehicleServiceImpl implements VehicleService
         if(vehicleByRegistrationNum.isPresent()){
             Resident residentByRegnum = vehicleByRegistrationNum.get().getResident();
 
-            GetResidentDataRequest residentDataRequest = new GetResidentDataRequest();
-
-            residentDataRequest.setId(residentByRegnum.getId());
-            residentDataRequest.setFName(residentByRegnum.getFName());
-            residentDataRequest.setLName(residentByRegnum.getLName());
-            residentDataRequest.setResidentType(residentByRegnum.getResidentType());
-            residentDataRequest.setEmail(residentByRegnum.getEmail());
-            residentDataRequest.setFlatNo(residentByRegnum.getFlatNo());
-            residentDataRequest.setMobNo(residentByRegnum.getMobNo());
+            GetResidentDataRequest residentDataRequest = GetResidentDataRequest.builder()
+                    .id(residentByRegnum.getId())
+                    .fName(residentByRegnum.getFName())
+                    .lName(residentByRegnum.getLName())
+                    .residentType(residentByRegnum.getResidentType())
+                    .email(residentByRegnum.getEmail())
+                    .flatNo(residentByRegnum.getFlatNo())
+                    .mobNo(residentByRegnum.getMobNo())
+                    .build();
             return residentDataRequest;
         }else{
             throw new ResourceNotFoundException("Vehicle with registration number '" + registrationNum + "' not found.");
