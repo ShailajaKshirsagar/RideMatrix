@@ -9,6 +9,7 @@ import app.ridematrix.entity.Visitors;
 import app.ridematrix.repository.ResidentRepo;
 import app.ridematrix.repository.VisitorRepo;
 import app.ridematrix.service.VisitorService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 public class VisitorsServiceImpl implements VisitorService {
 
     //inject repo in this
@@ -29,8 +31,14 @@ public class VisitorsServiceImpl implements VisitorService {
 
     @Override
     public String saveVisitor(VisitorRequestDto dto) {
+        log.info("Attempting to save visitor for flatNo: {}", dto.getFlatNo());
 
         Optional<Resident> resident = residentRepository.findByFlatNo(dto.getFlatNo());
+
+        if (resident.isEmpty()) {
+            log.warn("Resident not found with flatNo: {}", dto.getFlatNo());
+            throw new RuntimeException("Resident not found for flat number: " + dto.getFlatNo());
+        }
 
         Visitors visitors = new Visitors();
         visitors.setVisitorName(dto.getVisitorName());
@@ -40,78 +48,66 @@ public class VisitorsServiceImpl implements VisitorService {
         visitors.setPhoneNum(dto.getPhoneNum());
         visitors.setVisitPurpose(dto.getVisitPurpose());
         visitors.setVehicleName(dto.getVehicleName());
-        visitors.setVehicleName(dto.getVehicleName());
         visitors.setResident(resident.get());
+
         visitorRepository.save(visitors);
+        log.info("Visitor {} saved successfully for flatNo: {}", dto.getVisitorName(), dto.getFlatNo());
 
         return "Visitor saved";
     }
 
     @Override
     public VisitorResponseDTO findVisitorResidentByRegNum(String vehicleRegNum) {
+        log.info("Fetching visitor details by vehicleRegNum: {}", vehicleRegNum);
 
         Optional<Visitors> visitorByRegNum = visitorRepository.findVisitorByRegNum(vehicleRegNum);
         if (visitorByRegNum.isPresent()) {
-
-            Visitors visitors = visitorByRegNum.get(); // find associated visitor use get
-            Resident resident = visitorByRegNum.get().getResident(); //find associated resident
-
-            //mapping data in dto
-            VisitorResponseDTO dto = new VisitorResponseDTO();
-            dto.setVisitorName(visitors.getVisitorName());
-            dto.setVisitorType(visitors.getVisitorType());
-            dto.setVehicleName(visitors.getVehicleName());
-            dto.setPhoneNum(visitors.getPhoneNum());
-            dto.setVehicleRegNum(visitors.getVehicleRegNumber());
-            dto.setTimeIn(visitors.getTimeIn());
-            dto.setTimeOut(visitors.getTimeOut());
-            dto.setVisitPurpose(visitors.getVisitPurpose());
-            dto.setActiveVistor(visitors.isActiveVisitor());
-
-            //mapping data in dto
-            GetResidentDataRequest residentData = new GetResidentDataRequest();
-            residentData.setId(resident.getId());
-            residentData.setFName(resident.getFName());
-            residentData.setLName(resident.getLName());
-            residentData.setFlatNo(resident.getFlatNo());
-            residentData.setMobNo(resident.getMobNo());
-            residentData.setEmail(resident.getEmail());
-            residentData.setResidentType(resident.getResidentType());
-
-            dto.setGetResidentDataRequest(residentData);
-
-            return dto;
+            log.info("Visitor found with vehicleRegNum: {}", vehicleRegNum);
+            // mapping and returning DTO as before...
+            return VisitorMapper.toDto(visitorByRegNum.get());
         }
+
+        log.warn("Visitor not found with vehicleRegNum: {}", vehicleRegNum);
         throw new RuntimeException("Visitor not found with vehicle registration number: " + vehicleRegNum);
     }
 
-    //update out time by vehicle num
     @Override
     public String updateOutTime(String vehicleRegNum) {
-//        LocalDateTime now = LocalDateTime.now(); // auto time
-//        int updated = visitorRepository.updateOutTime(vehicleRegNum, now);
+        log.info("Updating out time for visitor with vehicleRegNum: {}", vehicleRegNum);
+
         Optional<Visitors> visitor = visitorRepository.findVisitorByRegNum(vehicleRegNum);
 
         if (visitor.isPresent()) {
             Visitors v = visitor.get();
             v.setTimeOut(LocalDateTime.now());
             visitorRepository.save(v);
+            log.info("Visitor exit time updated for vehicleRegNum: {}", vehicleRegNum);
             return "Visitor exit time and duration updated";
         }
+
+        log.warn("Visitor not found with vehicleRegNum: {}", vehicleRegNum);
         throw new RuntimeException("Visitor not found with vehicle registration number: " + vehicleRegNum);
     }
 
     @Override
     public List<VisitorResponseDTO> findVisitorType(List<Visitors.VisitorType> visitorType) {
+        log.info("Fetching visitors with types: {}", visitorType);
+
         List<Visitors> visitors;
-        if (visitorType == null || visitorType.isEmpty()){
+        if (visitorType == null || visitorType.isEmpty()) {
             visitors = visitorRepository.findAllVisitors();
-        } else{
+            log.info("Fetched all visitors as no specific visitorType provided");
+        } else {
             visitors = visitorRepository.findVisitorType(visitorType);
+            log.info("Fetched visitors filtered by visitorType");
         }
-        // here we have to convert visitors into visitorresponse
-        return visitors.stream()
+
+        List<VisitorResponseDTO> dtoList = visitors.stream()
                 .map(VisitorMapper::toDto)
                 .collect(Collectors.toList());
+
+        log.info("Total visitors fetched: {}", dtoList.size());
+
+        return dtoList;
     }
 }

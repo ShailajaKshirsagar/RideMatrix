@@ -2,6 +2,7 @@
 All notable changes to this project are documented in this file.
 ## [0.2.0] - 2025-09-06
 ### Added
+- Logger implemented
 - Scheduler - Automatically stores visitor history backup in Excel format daily at 11 PM.[VEHMS-M02-T031]
   - Excel files named as `visitors_history_log_DDMMYYYY.xlsx`
   - Stored in `D:/visitors_log/`
