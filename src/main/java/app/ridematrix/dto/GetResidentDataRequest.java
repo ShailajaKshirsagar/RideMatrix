@@ -1,14 +1,18 @@
 package app.ridematrix.dto;
 
 import app.ridematrix.entity.Resident;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import app.ridematrix.entity.Vehicle;
+import lombok.*;
+
+import java.util.List;
 
 //DTO FOr resident data
 @Setter
 @Getter
 @ToString
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class GetResidentDataRequest
 {
     private int id;
@@ -22,4 +26,6 @@ public class GetResidentDataRequest
         OWNER,
         TENANT
     }
+    private
+    List<Vehicle> vehicleList;
 }
