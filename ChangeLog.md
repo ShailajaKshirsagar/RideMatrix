@@ -8,6 +8,20 @@ All notable changes to this project are documented in this file.
   - Folder is auto-created if not present
 - Excel export includes visitor and associated resident data.
 - Integrated Apache POI for Excel export.
+  - Custom exception classes for better error handling:
+          - ConstraintViolationException
+          - HandleDatabaseException
+          - IllegalArgumentException
+          - InvalidRegistrationNum
+          - MethodArgumentTypeMismatchException
+          - MissingServletRequestParameterException
+          - ResourceNotFoundException
+
+### Changed
+- Updated saveResident() to:
+  - Automatically set associationActivatedAt or associationDeactivatedAt timestamps for each vehicle based on its isVehicleActive status.
+- Updated saveVehicle() to:
+  - Set vehicle activation or deactivation timestamps during save based on CreateVehicleRequest.
 
 ### Changed
 - File naming and folder creation logic added to scheduler layer.
