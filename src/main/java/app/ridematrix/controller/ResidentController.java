@@ -1,5 +1,8 @@
 package app.ridematrix.controller;
 
+import app.ridematrix.converter.ResidentMapper;
+import app.ridematrix.converter.ResidentMapperWithVehicle;
+import app.ridematrix.dto.GetResidentDataRequest;
 import app.ridematrix.entity.Resident;
 import app.ridematrix.service.ResidentService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -15,6 +18,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/residents")
@@ -34,11 +38,15 @@ public class ResidentController
     }
 
     //API to get all resident along with their vehicle
-    @GetMapping("/getAllResidents")
-    @Operation(summary = "Get all Residents details with Vehicles")
-    public ResponseEntity<List<Resident>> getAllResident(){
-        List<Resident> residentList = residentService.getAllResidents();
-        return new ResponseEntity<>(residentList,HttpStatus.OK);
+    @GetMapping("/getAllResident")
+    @Operation(summary = "Get all resident details")
+    public ResponseEntity<List<GetResidentDataRequest>> getAllResidents() {
+        List<Resident> residents = residentService.getAllResidents();
+
+        List<GetResidentDataRequest> dtoList = residents.stream()
+                .map(ResidentMapper::toDto)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(dtoList);
     }
 
     //API to get resident details with name
@@ -48,15 +56,23 @@ public class ResidentController
     public ResponseEntity<?> getResidentByName(
             @Pattern(regexp = "^[A-Za-z]*$", message = "First name should not contain numbers")
             @Parameter(description = "First name of resident (optional)")
-            @RequestParam(required = false) String fName ,
+            @RequestParam(required = false) String fName,
+
             @Pattern(regexp = "^[A-Za-z]*$", message = "Last name should not contain numbers")
             @Parameter(description = "Last name of resident (optional)")
-            @RequestParam(required = false) String lName)
-    {
-        List<Resident> residentByName = residentService.getResidentByName(fName, lName);
-        if (residentByName.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Resident not found with given name inputs.");
+            @RequestParam(required = false) String lName) {
+
+        List<Resident> residentList = residentService.getResidentByName(fName, lName);
+
+        if (residentList.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("Resident not found with given name inputs.");
         }
-        return ResponseEntity.ok(residentByName);
+
+        List<GetResidentDataRequest> dtoList = residentList.stream()
+                .map(ResidentMapperWithVehicle::toGetResident)
+                .collect(Collectors.toList());
+
+        return ResponseEntity.ok(dtoList);
     }
 }
