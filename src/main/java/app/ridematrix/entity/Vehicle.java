@@ -3,6 +3,7 @@ package app.ridematrix.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
@@ -27,7 +28,8 @@ public class Vehicle
             initialValue = 10000 // starting value for Vehicle IDs
     )
     private long id;
-    @NotNull(message = "Registration Number is Required")
+
+    @NotBlank(message = "Registration Number is Required")
     @Pattern(
             regexp = "^[A-Z0-9]{4}-[A-Z]{2}-\\d{4}$",
             message = "Registration number must be in format XX-00-XX-0000 equal to 10"
@@ -35,7 +37,7 @@ public class Vehicle
     private String registrationNum;
     private String vColor;
 
-    @NotNull(message = "Vehicle Type is Required")
+    @NotBlank(message = "Vehicle Type is Required")
     @Enumerated(EnumType.STRING)
     private VehicleType vType;
     public enum VehicleType{
@@ -57,5 +59,4 @@ public class Vehicle
     //@JsonProperty(access = JsonProperty.Access.READ_ONLY)
     @JsonIgnore
     private Resident resident;
-
 }

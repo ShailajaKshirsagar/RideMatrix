@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project are documented in this file.
 ## [0.2.0] - 2025-09-06
+### Fixed
+- Improved validation logic for user input: used `@NotBlank` on String fields to prevent empty or whitespace-only values.
+
 ### Added
 - Logger implemented
 - Scheduler - Automatically stores visitor history backup in Excel format daily at 11 PM.[VEHMS-M02-T031]

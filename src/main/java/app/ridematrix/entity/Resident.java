@@ -4,11 +4,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.lang.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,10 +26,10 @@ public class Resident {
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private int id;
 
-    @NotNull(message = "First name is Required")
+    @NotBlank(message = "First name is Required")
     private String fName;
 
-    @NotNull(message = "Last name is Required")
+    @NotBlank(message = "Last name is Required")
     private String lName;
 
     @Pattern(regexp = "^[A-Za-z0-9-]+$", message = "Flat number must be alphanumeric with optional hyphens")
@@ -40,7 +42,7 @@ public class Resident {
     @Email(message = "Email should be valid")
     private String email;
 
-    @NotNull(message = "Resident Type is Required")
+    @NotBlank(message = "Resident Type is Required")
     @Enumerated(EnumType.STRING)
     private ResidentType residentType;
 

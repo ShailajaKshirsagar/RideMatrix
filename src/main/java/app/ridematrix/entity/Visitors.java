@@ -2,6 +2,7 @@ package app.ridematrix.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
@@ -18,11 +19,11 @@ public class Visitors {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private int id;
-    @NotNull(message = "Visitor name is required")
+    @NotBlank(message = "Visitor name is required")
     private String visitorName;
     private String vehicleName;
 
-    @NotNull(message = "Registration Number is Required")
+    @NotBlank(message = "Registration Number is Required")
     @Pattern(
             regexp = "^[A-Z0-9]{4}-[A-Z]{2}-\\d{4}$",
             message = "Registration number must be in format XX-00-XX-0000 equal to 10"
@@ -81,6 +82,4 @@ public class Visitors {
         }
         return null;
     }
-
-
 }

@@ -1,107 +1,367 @@
-2025-09-07T16:34:56.914+05:30  INFO 17292 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Starting RideMatrixVmsApplication using Java 17.0.12 with PID 17292 (C:\Users\asus\OneDrive\Desktop\SpringBoot\FullBackendProject\RideMatrix_VMS\RideMatrix_VMS\target\classes started by Shailaja kshirsagar in C:\Users\asus\OneDrive\Desktop\SpringBoot\FullBackendProject\RideMatrix_VMS\RideMatrix_VMS)
-2025-09-07T16:34:56.914+05:30 DEBUG 17292 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-09-07T16:34:56.914+05:30  INFO 17292 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-09-07T16:34:58.365+05:30  INFO 17292 --- [RideMatrix_VMS] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-07T16:34:58.456+05:30  INFO 17292 --- [RideMatrix_VMS] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 3 JPA repository interfaces.
-2025-09-07T16:34:59.433+05:30  INFO 17292 --- [RideMatrix_VMS] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-07T16:34:59.461+05:30  INFO 17292 --- [RideMatrix_VMS] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-07T16:34:59.461+05:30  INFO 17292 --- [RideMatrix_VMS] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-09-07T16:34:59.620+05:30  INFO 17292 --- [RideMatrix_VMS] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-09-07T16:34:59.620+05:30  INFO 17292 --- [RideMatrix_VMS] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2625 ms
-2025-09-07T16:34:59.866+05:30  INFO 17292 --- [RideMatrix_VMS] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-07T16:35:00.017+05:30  INFO 17292 --- [RideMatrix_VMS] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-09-07T16:35:00.088+05:30  INFO 17292 --- [RideMatrix_VMS] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-07T16:35:00.545+05:30  INFO 17292 --- [RideMatrix_VMS] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-07T16:35:00.577+05:30  INFO 17292 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-07T16:35:00.992+05:30  INFO 17292 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@14b95942
-2025-09-07T16:35:00.992+05:30  INFO 17292 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-07T16:35:01.050+05:30  WARN 17292 --- [RideMatrix_VMS] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-09-07T16:35:02.475+05:30  INFO 17292 --- [RideMatrix_VMS] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-07T16:35:02.569+05:30  INFO 17292 --- [RideMatrix_VMS] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-07T16:35:02.958+05:30  INFO 17292 --- [RideMatrix_VMS] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-09-07T16:35:03.807+05:30  WARN 17292 --- [RideMatrix_VMS] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-07T16:35:04.439+05:30  INFO 17292 --- [RideMatrix_VMS] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2025-09-07T16:35:04.460+05:30  INFO 17292 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Started RideMatrixVmsApplication in 8.236 seconds (process running for 8.885)
-2025-09-07T16:35:14.539+05:30  INFO 17292 --- [RideMatrix_VMS] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-07T16:35:14.547+05:30  INFO 17292 --- [RideMatrix_VMS] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-07T16:35:14.555+05:30  INFO 17292 --- [RideMatrix_VMS] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2025-09-07T16:35:18.399+05:30  INFO 17292 --- [RideMatrix_VMS] [http-nio-8080-exec-3] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 2745 ms
-2025-09-07T16:35:30.186+05:30  INFO 17292 --- [RideMatrix_VMS] [http-nio-8080-exec-7] a.r.controller.VisitorController         : GET /visitors/getActiveVisitorsInSociety - Fetching active visitors with filter: [GUEST]
-2025-09-07T16:35:30.187+05:30  INFO 17292 --- [RideMatrix_VMS] [http-nio-8080-exec-7] a.r.serviceImpl.VisitorsServiceImpl      : Fetching visitors with types: [GUEST]
-2025-09-07T16:35:30.470+05:30  INFO 17292 --- [RideMatrix_VMS] [http-nio-8080-exec-7] a.r.serviceImpl.VisitorsServiceImpl      : Fetched visitors filtered by visitorType
-2025-09-07T16:35:30.470+05:30  INFO 17292 --- [RideMatrix_VMS] [http-nio-8080-exec-7] a.r.serviceImpl.VisitorsServiceImpl      : Total visitors fetched: 3
-2025-09-07T16:35:30.470+05:30  INFO 17292 --- [RideMatrix_VMS] [http-nio-8080-exec-7] a.r.controller.VisitorController         : Found 3 active visitors
-2025-09-07T16:36:06.544+05:30  INFO 17292 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-07T16:36:06.548+05:30  INFO 17292 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-07T16:36:06.578+05:30  INFO 17292 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-09-07T16:44:51.878+05:30  INFO 22516 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Starting RideMatrixVmsApplication using Java 17.0.12 with PID 22516 (C:\Users\asus\OneDrive\Desktop\SpringBoot\FullBackendProject\RideMatrix_VMS\RideMatrix_VMS\target\classes started by Shailaja kshirsagar in C:\Users\asus\OneDrive\Desktop\SpringBoot\FullBackendProject\RideMatrix_VMS\RideMatrix_VMS)
-2025-09-07T16:44:51.878+05:30 DEBUG 22516 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-09-07T16:44:51.878+05:30  INFO 22516 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-09-07T16:44:53.184+05:30  INFO 22516 --- [RideMatrix_VMS] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-07T16:44:53.273+05:30  INFO 22516 --- [RideMatrix_VMS] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 92 ms. Found 3 JPA repository interfaces.
-2025-09-07T16:44:54.127+05:30  INFO 22516 --- [RideMatrix_VMS] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-07T16:44:54.143+05:30  INFO 22516 --- [RideMatrix_VMS] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-07T16:44:54.143+05:30  INFO 22516 --- [RideMatrix_VMS] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-09-07T16:44:54.238+05:30  INFO 22516 --- [RideMatrix_VMS] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-09-07T16:44:54.240+05:30  INFO 22516 --- [RideMatrix_VMS] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2283 ms
-2025-09-07T16:44:54.491+05:30  INFO 22516 --- [RideMatrix_VMS] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-07T16:44:54.580+05:30  INFO 22516 --- [RideMatrix_VMS] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-09-07T16:44:54.627+05:30  INFO 22516 --- [RideMatrix_VMS] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-07T16:44:54.991+05:30  INFO 22516 --- [RideMatrix_VMS] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-07T16:44:55.032+05:30  INFO 22516 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-07T16:44:55.327+05:30  INFO 22516 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7f8c3646
-2025-09-07T16:44:55.333+05:30  INFO 22516 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-07T16:44:55.384+05:30  WARN 22516 --- [RideMatrix_VMS] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-09-07T16:44:56.797+05:30  INFO 22516 --- [RideMatrix_VMS] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-07T16:44:56.862+05:30  INFO 22516 --- [RideMatrix_VMS] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-07T16:44:57.304+05:30  INFO 22516 --- [RideMatrix_VMS] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-09-07T16:44:58.196+05:30  WARN 22516 --- [RideMatrix_VMS] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-07T16:44:58.814+05:30  INFO 22516 --- [RideMatrix_VMS] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2025-09-07T16:44:58.825+05:30  INFO 22516 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Started RideMatrixVmsApplication in 7.605 seconds (process running for 8.162)
-2025-09-07T16:45:08.210+05:30  INFO 22516 --- [RideMatrix_VMS] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-07T16:45:08.216+05:30  INFO 22516 --- [RideMatrix_VMS] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-07T16:45:08.219+05:30  INFO 22516 --- [RideMatrix_VMS] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2025-09-07T16:45:09.993+05:30  INFO 22516 --- [RideMatrix_VMS] [http-nio-8080-exec-6] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1473 ms
-2025-09-07T16:45:19.545+05:30  INFO 22516 --- [RideMatrix_VMS] [http-nio-8080-exec-5] a.r.controller.VisitorController         : GET /visitors/getActiveVisitorsInSociety - Fetching active visitors with filter: [GUEST]
-2025-09-07T16:45:19.545+05:30  INFO 22516 --- [RideMatrix_VMS] [http-nio-8080-exec-5] a.r.serviceImpl.VisitorsServiceImpl      : Fetching visitors with types: [GUEST]
-2025-09-07T16:45:20.041+05:30  INFO 22516 --- [RideMatrix_VMS] [http-nio-8080-exec-5] a.r.serviceImpl.VisitorsServiceImpl      : Fetched visitors filtered by visitorType
-2025-09-07T16:45:20.049+05:30  INFO 22516 --- [RideMatrix_VMS] [http-nio-8080-exec-5] a.r.serviceImpl.VisitorsServiceImpl      : Total visitors fetched: 3
-2025-09-07T16:45:20.049+05:30  INFO 22516 --- [RideMatrix_VMS] [http-nio-8080-exec-5] a.r.controller.VisitorController         : Found 3 active visitors
-2025-09-07T16:46:04.732+05:30  INFO 22516 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-07T16:46:04.736+05:30  INFO 22516 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-07T16:46:04.768+05:30  INFO 22516 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-09-07T16:46:32.328+05:30  INFO 26064 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Starting RideMatrixVmsApplication using Java 17.0.12 with PID 26064 (C:\Users\asus\OneDrive\Desktop\SpringBoot\FullBackendProject\RideMatrix_VMS\RideMatrix_VMS\target\classes started by Shailaja kshirsagar in C:\Users\asus\OneDrive\Desktop\SpringBoot\FullBackendProject\RideMatrix_VMS\RideMatrix_VMS)
-2025-09-07T16:46:32.328+05:30 DEBUG 26064 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Running with Spring Boot v3.2.5, Spring v6.1.6
-2025-09-07T16:46:32.328+05:30  INFO 26064 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : No active profile set, falling back to 1 default profile: "default"
-2025-09-07T16:46:33.690+05:30  INFO 26064 --- [RideMatrix_VMS] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-09-07T16:46:33.806+05:30  INFO 26064 --- [RideMatrix_VMS] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93 ms. Found 3 JPA repository interfaces.
-2025-09-07T16:46:34.725+05:30  INFO 26064 --- [RideMatrix_VMS] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-09-07T16:46:34.739+05:30  INFO 26064 --- [RideMatrix_VMS] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-09-07T16:46:34.739+05:30  INFO 26064 --- [RideMatrix_VMS] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
-2025-09-07T16:46:34.843+05:30  INFO 26064 --- [RideMatrix_VMS] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-09-07T16:46:34.843+05:30  INFO 26064 --- [RideMatrix_VMS] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2438 ms
-2025-09-07T16:46:35.070+05:30  INFO 26064 --- [RideMatrix_VMS] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-09-07T16:46:35.150+05:30  INFO 26064 --- [RideMatrix_VMS] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2025-09-07T16:46:35.211+05:30  INFO 26064 --- [RideMatrix_VMS] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-09-07T16:46:35.540+05:30  INFO 26064 --- [RideMatrix_VMS] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-09-07T16:46:35.568+05:30  INFO 26064 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-09-07T16:46:35.906+05:30  INFO 26064 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@37c2f0b4
-2025-09-07T16:46:35.906+05:30  INFO 26064 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-09-07T16:46:35.952+05:30  WARN 26064 --- [RideMatrix_VMS] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-09-07T16:46:37.496+05:30  INFO 26064 --- [RideMatrix_VMS] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-09-07T16:46:37.607+05:30  INFO 26064 --- [RideMatrix_VMS] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-09-07T16:46:38.027+05:30  INFO 26064 --- [RideMatrix_VMS] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-09-07T16:46:38.875+05:30  WARN 26064 --- [RideMatrix_VMS] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-09-07T16:46:39.477+05:30  INFO 26064 --- [RideMatrix_VMS] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
-2025-09-07T16:46:39.506+05:30  INFO 26064 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Started RideMatrixVmsApplication in 7.882 seconds (process running for 8.446)
-2025-09-07T16:48:03.059+05:30  INFO 26064 --- [RideMatrix_VMS] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-09-07T16:48:03.063+05:30  INFO 26064 --- [RideMatrix_VMS] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-09-07T16:48:03.211+05:30  INFO 26064 --- [RideMatrix_VMS] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 146 ms
-2025-09-07T16:49:36.263+05:30  INFO 26064 --- [RideMatrix_VMS] [http-nio-8080-exec-4] a.r.controller.VisitorController         : GET /visitors/getActiveVisitorsInSociety - Fetching active visitors with filter: null
-2025-09-07T16:49:36.265+05:30  INFO 26064 --- [RideMatrix_VMS] [http-nio-8080-exec-4] a.r.serviceImpl.VisitorsServiceImpl      : Fetching visitors with types: null
-2025-09-07T16:49:36.498+05:30  INFO 26064 --- [RideMatrix_VMS] [http-nio-8080-exec-4] a.r.serviceImpl.VisitorsServiceImpl      : Fetched all visitors as no specific visitorType provided
-2025-09-07T16:49:36.503+05:30  INFO 26064 --- [RideMatrix_VMS] [http-nio-8080-exec-4] a.r.serviceImpl.VisitorsServiceImpl      : Total visitors fetched: 4
-2025-09-07T16:49:36.503+05:30  INFO 26064 --- [RideMatrix_VMS] [http-nio-8080-exec-4] a.r.controller.VisitorController         : Found 4 active visitors
-2025-09-07T16:49:45.316+05:30  INFO 26064 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-09-07T16:49:45.332+05:30  INFO 26064 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-09-07T16:49:45.348+05:30  INFO 26064 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-08T18:43:21.984+05:30  INFO 2444 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Starting RideMatrixVmsApplication using Java 17.0.12 with PID 2444 (C:\Users\asus\OneDrive\Desktop\SpringBoot\FullBackendProject\RideMatrix_VMS\RideMatrix_VMS\target\classes started by Shailaja kshirsagar in C:\Users\asus\OneDrive\Desktop\SpringBoot\FullBackendProject\RideMatrix_VMS\RideMatrix_VMS)
+2025-09-08T18:43:21.995+05:30 DEBUG 2444 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Running with Spring Boot v3.2.5, Spring v6.1.6
+2025-09-08T18:43:21.997+05:30  INFO 2444 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-09-08T18:43:23.496+05:30  INFO 2444 --- [RideMatrix_VMS] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-08T18:43:23.608+05:30  INFO 2444 --- [RideMatrix_VMS] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 91 ms. Found 3 JPA repository interfaces.
+2025-09-08T18:43:24.495+05:30  INFO 2444 --- [RideMatrix_VMS] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-08T18:43:24.508+05:30  INFO 2444 --- [RideMatrix_VMS] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-08T18:43:24.519+05:30  INFO 2444 --- [RideMatrix_VMS] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-09-08T18:43:24.623+05:30  INFO 2444 --- [RideMatrix_VMS] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-08T18:43:24.633+05:30  INFO 2444 --- [RideMatrix_VMS] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2542 ms
+2025-09-08T18:43:24.929+05:30  INFO 2444 --- [RideMatrix_VMS] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-08T18:43:25.045+05:30  INFO 2444 --- [RideMatrix_VMS] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-09-08T18:43:25.093+05:30  INFO 2444 --- [RideMatrix_VMS] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-08T18:43:25.508+05:30  INFO 2444 --- [RideMatrix_VMS] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-08T18:43:25.547+05:30  INFO 2444 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-08T18:43:25.979+05:30  INFO 2444 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4cd7d5e1
+2025-09-08T18:43:25.979+05:30  INFO 2444 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-08T18:43:26.090+05:30  WARN 2444 --- [RideMatrix_VMS] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-08T18:43:27.588+05:30  INFO 2444 --- [RideMatrix_VMS] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-08T18:43:27.693+05:30  INFO 2444 --- [RideMatrix_VMS] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T18:43:28.143+05:30  INFO 2444 --- [RideMatrix_VMS] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-08T18:43:29.074+05:30  WARN 2444 --- [RideMatrix_VMS] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-08T18:43:29.720+05:30  INFO 2444 --- [RideMatrix_VMS] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-09-08T18:43:29.742+05:30  INFO 2444 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Started RideMatrixVmsApplication in 8.541 seconds (process running for 9.391)
+2025-09-08T18:43:38.822+05:30  INFO 2444 --- [RideMatrix_VMS] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-08T18:43:38.823+05:30  INFO 2444 --- [RideMatrix_VMS] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-08T18:43:38.825+05:30  INFO 2444 --- [RideMatrix_VMS] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-09-08T18:43:42.438+05:30  INFO 2444 --- [RideMatrix_VMS] [http-nio-8080-exec-3] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 2519 ms
+2025-09-08T18:45:24.954+05:30  WARN 2444 --- [RideMatrix_VMS] [http-nio-8080-exec-5] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character (',' (code 44)): expected a value]
+2025-09-08T18:45:34.297+05:30  WARN 2444 --- [RideMatrix_VMS] [http-nio-8080-exec-4] app.ridematrix.GlobalExceptionHandler    : Validation failed: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<java.lang.String> app.ridematrix.controller.VehicleController.createVehicle(app.ridematrix.dto.CreateVehicleRequest): [Field error in object 'createVehicleRequest' on field 'registrationNum': rejected value [null]; codes [NotNull.createVehicleRequest.registrationNum,NotNull.registrationNum,NotNull.java.lang.String,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [createVehicleRequest.registrationNum,registrationNum]; arguments []; default message [registrationNum]]; default message [Registration num is required]] 
+2025-09-08T18:46:12.897+05:30  INFO 2444 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T18:46:12.903+05:30  INFO 2444 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-08T18:46:12.936+05:30  INFO 2444 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-08T22:06:16.951+05:30  INFO 17628 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Starting RideMatrixVmsApplication using Java 17.0.12 with PID 17628 (C:\Users\asus\OneDrive\Desktop\SpringBoot\FullBackendProject\RideMatrix_VMS\RideMatrix_VMS\target\classes started by Shailaja kshirsagar in C:\Users\asus\OneDrive\Desktop\SpringBoot\FullBackendProject\RideMatrix_VMS\RideMatrix_VMS)
+2025-09-08T22:06:16.955+05:30 DEBUG 17628 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Running with Spring Boot v3.2.5, Spring v6.1.6
+2025-09-08T22:06:16.956+05:30  INFO 17628 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-09-08T22:06:18.580+05:30  INFO 17628 --- [RideMatrix_VMS] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-08T22:06:18.700+05:30  INFO 17628 --- [RideMatrix_VMS] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 100 ms. Found 3 JPA repository interfaces.
+2025-09-08T22:06:19.744+05:30  INFO 17628 --- [RideMatrix_VMS] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-08T22:06:19.756+05:30  INFO 17628 --- [RideMatrix_VMS] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-08T22:06:19.773+05:30  INFO 17628 --- [RideMatrix_VMS] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-09-08T22:06:19.878+05:30  INFO 17628 --- [RideMatrix_VMS] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-08T22:06:19.878+05:30  INFO 17628 --- [RideMatrix_VMS] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2838 ms
+2025-09-08T22:06:20.148+05:30  INFO 17628 --- [RideMatrix_VMS] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-08T22:06:20.258+05:30  INFO 17628 --- [RideMatrix_VMS] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-09-08T22:06:20.306+05:30  INFO 17628 --- [RideMatrix_VMS] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-08T22:06:20.964+05:30  INFO 17628 --- [RideMatrix_VMS] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-08T22:06:21.007+05:30  INFO 17628 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-08T22:06:21.484+05:30  INFO 17628 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4522d793
+2025-09-08T22:06:21.486+05:30  INFO 17628 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-08T22:06:21.546+05:30  WARN 17628 --- [RideMatrix_VMS] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-08T22:06:23.202+05:30  INFO 17628 --- [RideMatrix_VMS] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-08T22:06:23.345+05:30  INFO 17628 --- [RideMatrix_VMS] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T22:06:23.733+05:30  INFO 17628 --- [RideMatrix_VMS] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-08T22:06:24.668+05:30  WARN 17628 --- [RideMatrix_VMS] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-08T22:06:25.254+05:30  INFO 17628 --- [RideMatrix_VMS] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-09-08T22:06:25.270+05:30  INFO 17628 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Started RideMatrixVmsApplication in 9.133 seconds (process running for 9.865)
+2025-09-08T22:06:32.214+05:30  INFO 17628 --- [RideMatrix_VMS] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-08T22:06:32.214+05:30  INFO 17628 --- [RideMatrix_VMS] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-08T22:06:32.216+05:30  INFO 17628 --- [RideMatrix_VMS] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-09-08T22:06:33.504+05:30  INFO 17628 --- [RideMatrix_VMS] [http-nio-8080-exec-3] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 584 ms
+2025-09-08T22:07:28.311+05:30  WARN 17628 --- [RideMatrix_VMS] [http-nio-8080-exec-6] app.ridematrix.GlobalExceptionHandler    : Validation failed: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<java.lang.String> app.ridematrix.controller.ResidentController.createResident(app.ridematrix.entity.Resident): [Field error in object 'resident' on field 'fName': rejected value []; codes [NotBlank.resident.fName,NotBlank.fName,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [resident.fName,fName]; arguments []; default message [fName]]; default message [First name is Required]] 
+2025-09-08T22:08:49.261+05:30  INFO 17628 --- [RideMatrix_VMS] [http-nio-8080-exec-7] a.r.controller.ResidentController        : Received request to create resident with firstName: Harshita, lastName: 
+2025-09-08T22:08:49.263+05:30  INFO 17628 --- [RideMatrix_VMS] [http-nio-8080-exec-7] a.r.serviceImpl.ResidentServiceImpl      : Saving resident with ID: 0
+2025-09-08T22:08:49.263+05:30  INFO 17628 --- [RideMatrix_VMS] [http-nio-8080-exec-7] a.r.serviceImpl.ResidentServiceImpl      : Activated vehicle with registration number: MH12-GT-5407
+2025-09-08T22:08:49.488+05:30  INFO 17628 --- [RideMatrix_VMS] [http-nio-8080-exec-7] a.r.serviceImpl.ResidentServiceImpl      : Resident with ID: 152 saved successfully
+2025-09-08T22:08:49.491+05:30  INFO 17628 --- [RideMatrix_VMS] [http-nio-8080-exec-7] a.r.controller.ResidentController        : Resident creation result: Resident Saved
+2025-09-08T22:09:34.172+05:30  INFO 17628 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T22:09:34.177+05:30  INFO 17628 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-08T22:09:34.207+05:30  INFO 17628 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-08T22:11:29.501+05:30  INFO 1648 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Starting RideMatrixVmsApplication using Java 17.0.12 with PID 1648 (C:\Users\asus\OneDrive\Desktop\SpringBoot\FullBackendProject\RideMatrix_VMS\RideMatrix_VMS\target\classes started by Shailaja kshirsagar in C:\Users\asus\OneDrive\Desktop\SpringBoot\FullBackendProject\RideMatrix_VMS\RideMatrix_VMS)
+2025-09-08T22:11:29.501+05:30 DEBUG 1648 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Running with Spring Boot v3.2.5, Spring v6.1.6
+2025-09-08T22:11:29.501+05:30  INFO 1648 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-09-08T22:11:30.892+05:30  INFO 1648 --- [RideMatrix_VMS] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-08T22:11:31.067+05:30  INFO 1648 --- [RideMatrix_VMS] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 159 ms. Found 3 JPA repository interfaces.
+2025-09-08T22:11:32.066+05:30  INFO 1648 --- [RideMatrix_VMS] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-08T22:11:32.096+05:30  INFO 1648 --- [RideMatrix_VMS] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-08T22:11:32.096+05:30  INFO 1648 --- [RideMatrix_VMS] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-09-08T22:11:32.211+05:30  INFO 1648 --- [RideMatrix_VMS] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-08T22:11:32.211+05:30  INFO 1648 --- [RideMatrix_VMS] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2629 ms
+2025-09-08T22:11:32.453+05:30  INFO 1648 --- [RideMatrix_VMS] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-08T22:11:32.548+05:30  INFO 1648 --- [RideMatrix_VMS] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-09-08T22:11:32.588+05:30  INFO 1648 --- [RideMatrix_VMS] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-08T22:11:32.967+05:30  INFO 1648 --- [RideMatrix_VMS] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-08T22:11:33.014+05:30  INFO 1648 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-08T22:11:33.317+05:30  INFO 1648 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@52ca0ad4
+2025-09-08T22:11:33.317+05:30  INFO 1648 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-08T22:11:33.383+05:30  WARN 1648 --- [RideMatrix_VMS] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-08T22:11:34.947+05:30  INFO 1648 --- [RideMatrix_VMS] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-08T22:11:35.026+05:30  INFO 1648 --- [RideMatrix_VMS] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T22:11:35.447+05:30  INFO 1648 --- [RideMatrix_VMS] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-08T22:11:36.262+05:30  WARN 1648 --- [RideMatrix_VMS] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-08T22:11:36.825+05:30  INFO 1648 --- [RideMatrix_VMS] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-09-08T22:11:36.845+05:30  INFO 1648 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Started RideMatrixVmsApplication in 8.15 seconds (process running for 8.791)
+2025-09-08T22:13:10.479+05:30  INFO 1648 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T22:13:10.488+05:30  INFO 1648 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-08T22:13:10.511+05:30  INFO 1648 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-08T22:13:21.422+05:30  INFO 25984 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Starting RideMatrixVmsApplication using Java 17.0.12 with PID 25984 (C:\Users\asus\OneDrive\Desktop\SpringBoot\FullBackendProject\RideMatrix_VMS\RideMatrix_VMS\target\classes started by Shailaja kshirsagar in C:\Users\asus\OneDrive\Desktop\SpringBoot\FullBackendProject\RideMatrix_VMS\RideMatrix_VMS)
+2025-09-08T22:13:21.426+05:30 DEBUG 25984 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Running with Spring Boot v3.2.5, Spring v6.1.6
+2025-09-08T22:13:21.428+05:30  INFO 25984 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-09-08T22:13:22.738+05:30  INFO 25984 --- [RideMatrix_VMS] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-08T22:13:22.834+05:30  INFO 25984 --- [RideMatrix_VMS] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88 ms. Found 3 JPA repository interfaces.
+2025-09-08T22:13:23.838+05:30  INFO 25984 --- [RideMatrix_VMS] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-08T22:13:23.857+05:30  INFO 25984 --- [RideMatrix_VMS] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-08T22:13:23.857+05:30  INFO 25984 --- [RideMatrix_VMS] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-09-08T22:13:23.949+05:30  INFO 25984 --- [RideMatrix_VMS] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-08T22:13:23.949+05:30  INFO 25984 --- [RideMatrix_VMS] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2449 ms
+2025-09-08T22:13:24.194+05:30  INFO 25984 --- [RideMatrix_VMS] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-08T22:13:24.283+05:30  INFO 25984 --- [RideMatrix_VMS] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-09-08T22:13:24.334+05:30  INFO 25984 --- [RideMatrix_VMS] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-08T22:13:24.671+05:30  INFO 25984 --- [RideMatrix_VMS] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-08T22:13:24.707+05:30  INFO 25984 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-08T22:13:25.069+05:30  INFO 25984 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@56ec6960
+2025-09-08T22:13:25.076+05:30  INFO 25984 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-08T22:13:25.143+05:30  WARN 25984 --- [RideMatrix_VMS] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-08T22:13:26.669+05:30  INFO 25984 --- [RideMatrix_VMS] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-08T22:13:26.766+05:30  INFO 25984 --- [RideMatrix_VMS] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T22:13:27.214+05:30  INFO 25984 --- [RideMatrix_VMS] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-08T22:13:28.024+05:30  WARN 25984 --- [RideMatrix_VMS] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-08T22:13:33.714+05:30  INFO 25984 --- [RideMatrix_VMS] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-09-08T22:13:34.146+05:30  INFO 25984 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Started RideMatrixVmsApplication in 13.397 seconds (process running for 14.078)
+2025-09-08T22:14:37.458+05:30  INFO 25984 --- [RideMatrix_VMS] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-08T22:14:37.458+05:30  INFO 25984 --- [RideMatrix_VMS] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-08T22:14:37.458+05:30  INFO 25984 --- [RideMatrix_VMS] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-09-08T22:14:38.456+05:30  INFO 25984 --- [RideMatrix_VMS] [http-nio-8080-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 527 ms
+2025-09-08T22:15:07.780+05:30  INFO 25984 --- [RideMatrix_VMS] [http-nio-8080-exec-8] a.r.controller.VehicleController         : Received request to add vehicle for residentId: {}, regNum: {}
+2025-09-08T22:15:07.780+05:30  INFO 25984 --- [RideMatrix_VMS] [http-nio-8080-exec-8] a.r.serviceImpl.VehicleServiceImpl       : Attempting to save vehicle with registration number: 
+2025-09-08T22:15:07.954+05:30  INFO 25984 --- [RideMatrix_VMS] [http-nio-8080-exec-8] a.r.serviceImpl.VehicleServiceImpl       : Vehicle  activated at 2025-09-08T22:15:07.954865800
+2025-09-08T22:15:08.040+05:30 ERROR 25984 --- [RideMatrix_VMS] [http-nio-8080-exec-8] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction] with root cause
+
+jakarta.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'jakarta.validation.constraints.NotBlank' validating type 'app.ridematrix.entity.Vehicle$VehicleType'. Check configuration for 'vType'
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getExceptionForNullValidator(ConstraintTree.java:116) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getInitializedConstraintValidator(ConstraintTree.java:162) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.SimpleConstraintTree.validateConstraints(SimpleConstraintTree.java:58) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:75) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.doValidateConstraint(MetaConstraint.java:130) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.validateConstraint(MetaConstraint.java:123) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateMetaConstraint(ValidatorImpl.java:555) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForSingleDefaultGroupElement(ValidatorImpl.java:518) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForDefaultGroup(ValidatorImpl.java:488) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForCurrentGroup(ValidatorImpl.java:450) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateInContext(ValidatorImpl.java:400) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validate(ValidatorImpl.java:172) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.boot.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:128) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.boot.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:81) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.action.internal.EntityInsertAction.preInsert(EntityInsertAction.java:230) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:100) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:632) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:499) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:363) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1403) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:484) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2319) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1976) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.1.6.jar:6.1.6]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:794) ~[spring-tx-6.1.6.jar:6.1.6]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:757) ~[spring-tx-6.1.6.jar:6.1.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:676) ~[spring-tx-6.1.6.jar:6.1.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:426) ~[spring-tx-6.1.6.jar:6.1.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164) ~[spring-data-jpa-3.2.5.jar:3.2.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.1.6.jar:6.1.6]
+	at jdk.proxy2/jdk.proxy2.$Proxy143.save(Unknown Source) ~[na:na]
+	at app.ridematrix.serviceImpl.VehicleServiceImpl.saveVehicle(VehicleServiceImpl.java:53) ~[classes/:na]
+	at app.ridematrix.controller.VehicleController.createVehicle(VehicleController.java:38) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.20.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.20.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2025-09-08T22:21:20.072+05:30  INFO 25984 --- [RideMatrix_VMS] [http-nio-8080-exec-7] a.r.controller.VehicleController         : Received request to add vehicle for residentId: {}, regNum: {}
+2025-09-08T22:21:20.072+05:30  INFO 25984 --- [RideMatrix_VMS] [http-nio-8080-exec-7] a.r.serviceImpl.VehicleServiceImpl       : Attempting to save vehicle with registration number:  
+2025-09-08T22:21:20.089+05:30  INFO 25984 --- [RideMatrix_VMS] [http-nio-8080-exec-7] a.r.serviceImpl.VehicleServiceImpl       : Vehicle   activated at 2025-09-08T22:21:20.089286600
+2025-09-08T22:21:20.104+05:30 ERROR 25984 --- [RideMatrix_VMS] [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction] with root cause
+
+jakarta.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'jakarta.validation.constraints.NotBlank' validating type 'app.ridematrix.entity.Vehicle$VehicleType'. Check configuration for 'vType'
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getExceptionForNullValidator(ConstraintTree.java:116) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getInitializedConstraintValidator(ConstraintTree.java:162) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.SimpleConstraintTree.validateConstraints(SimpleConstraintTree.java:58) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:75) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.doValidateConstraint(MetaConstraint.java:130) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.validateConstraint(MetaConstraint.java:123) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateMetaConstraint(ValidatorImpl.java:555) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForSingleDefaultGroupElement(ValidatorImpl.java:518) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForDefaultGroup(ValidatorImpl.java:488) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForCurrentGroup(ValidatorImpl.java:450) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateInContext(ValidatorImpl.java:400) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validate(ValidatorImpl.java:172) ~[hibernate-validator-8.0.1.Final.jar:8.0.1.Final]
+	at org.hibernate.boot.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:128) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.boot.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:81) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.action.internal.EntityInsertAction.preInsert(EntityInsertAction.java:230) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:100) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:632) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:499) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:363) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:41) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1403) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:484) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2319) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1976) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.4.4.Final.jar:6.4.4.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.1.6.jar:6.1.6]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:794) ~[spring-tx-6.1.6.jar:6.1.6]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:757) ~[spring-tx-6.1.6.jar:6.1.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:676) ~[spring-tx-6.1.6.jar:6.1.6]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:426) ~[spring-tx-6.1.6.jar:6.1.6]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:164) ~[spring-data-jpa-3.2.5.jar:3.2.5]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.6.jar:6.1.6]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.1.6.jar:6.1.6]
+	at jdk.proxy2/jdk.proxy2.$Proxy143.save(Unknown Source) ~[na:na]
+	at app.ridematrix.serviceImpl.VehicleServiceImpl.saveVehicle(VehicleServiceImpl.java:53) ~[classes/:na]
+	at app.ridematrix.controller.VehicleController.createVehicle(VehicleController.java:38) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.20.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.6.jar:6.1.6]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.20.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:206) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.6.jar:6.1.6]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:175) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:150) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1736) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.20.jar:10.1.20]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2025-09-08T22:21:28.142+05:30  INFO 25984 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T22:21:28.155+05:30  INFO 25984 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-08T22:21:28.209+05:30  INFO 25984 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-08T22:23:24.223+05:30  INFO 24568 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Starting RideMatrixVmsApplication using Java 17.0.12 with PID 24568 (C:\Users\asus\OneDrive\Desktop\SpringBoot\FullBackendProject\RideMatrix_VMS\RideMatrix_VMS\target\classes started by Shailaja kshirsagar in C:\Users\asus\OneDrive\Desktop\SpringBoot\FullBackendProject\RideMatrix_VMS\RideMatrix_VMS)
+2025-09-08T22:23:24.233+05:30 DEBUG 24568 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Running with Spring Boot v3.2.5, Spring v6.1.6
+2025-09-08T22:23:24.233+05:30  INFO 24568 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : No active profile set, falling back to 1 default profile: "default"
+2025-09-08T22:23:25.687+05:30  INFO 24568 --- [RideMatrix_VMS] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-09-08T22:23:25.827+05:30  INFO 24568 --- [RideMatrix_VMS] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122 ms. Found 3 JPA repository interfaces.
+2025-09-08T22:23:26.866+05:30  INFO 24568 --- [RideMatrix_VMS] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-09-08T22:23:26.884+05:30  INFO 24568 --- [RideMatrix_VMS] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-09-08T22:23:26.884+05:30  INFO 24568 --- [RideMatrix_VMS] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2025-09-08T22:23:26.986+05:30  INFO 24568 --- [RideMatrix_VMS] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-09-08T22:23:26.986+05:30  INFO 24568 --- [RideMatrix_VMS] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2679 ms
+2025-09-08T22:23:27.249+05:30  INFO 24568 --- [RideMatrix_VMS] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-09-08T22:23:27.371+05:30  INFO 24568 --- [RideMatrix_VMS] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-09-08T22:23:27.447+05:30  INFO 24568 --- [RideMatrix_VMS] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-09-08T22:23:27.892+05:30  INFO 24568 --- [RideMatrix_VMS] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-09-08T22:23:27.952+05:30  INFO 24568 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-09-08T22:23:28.333+05:30  INFO 24568 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@286866cb
+2025-09-08T22:23:28.333+05:30  INFO 24568 --- [RideMatrix_VMS] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-09-08T22:23:28.394+05:30  WARN 24568 --- [RideMatrix_VMS] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-09-08T22:23:30.133+05:30  INFO 24568 --- [RideMatrix_VMS] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-09-08T22:23:30.245+05:30  INFO 24568 --- [RideMatrix_VMS] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T22:23:31.413+05:30  INFO 24568 --- [RideMatrix_VMS] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-09-08T22:23:39.195+05:30  WARN 24568 --- [RideMatrix_VMS] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-08T22:23:44.498+05:30  INFO 24568 --- [RideMatrix_VMS] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2025-09-08T22:23:44.518+05:30  INFO 24568 --- [RideMatrix_VMS] [main] a.ridematrix.RideMatrixVmsApplication    : Started RideMatrixVmsApplication in 21.001 seconds (process running for 21.662)
+2025-09-08T22:23:49.033+05:30  INFO 24568 --- [RideMatrix_VMS] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-09-08T22:23:49.033+05:30  INFO 24568 --- [RideMatrix_VMS] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-09-08T22:23:49.037+05:30  INFO 24568 --- [RideMatrix_VMS] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-09-08T22:23:50.183+05:30  INFO 24568 --- [RideMatrix_VMS] [http-nio-8080-exec-4] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 513 ms
+2025-09-08T22:24:15.903+05:30  WARN 24568 --- [RideMatrix_VMS] [http-nio-8080-exec-8] app.ridematrix.GlobalExceptionHandler    : Validation failed: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<java.lang.String> app.ridematrix.controller.VehicleController.createVehicle(app.ridematrix.dto.CreateVehicleRequest): [Field error in object 'createVehicleRequest' on field 'registrationNum': rejected value []; codes [NotBlank.createVehicleRequest.registrationNum,NotBlank.registrationNum,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [createVehicleRequest.registrationNum,registrationNum]; arguments []; default message [registrationNum]]; default message [Registration num is required]] 
+2025-09-08T22:24:22.368+05:30  WARN 24568 --- [RideMatrix_VMS] [http-nio-8080-exec-9] app.ridematrix.GlobalExceptionHandler    : Validation failed: Validation failed for argument [0] in public org.springframework.http.ResponseEntity<java.lang.String> app.ridematrix.controller.VehicleController.createVehicle(app.ridematrix.dto.CreateVehicleRequest): [Field error in object 'createVehicleRequest' on field 'registrationNum': rejected value [ ]; codes [NotBlank.createVehicleRequest.registrationNum,NotBlank.registrationNum,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [createVehicleRequest.registrationNum,registrationNum]; arguments []; default message [registrationNum]]; default message [Registration num is required]] 
+2025-09-08T22:25:46.970+05:30  INFO 24568 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-08T22:25:46.975+05:30  INFO 24568 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-08T22:25:47.007+05:30  INFO 24568 --- [RideMatrix_VMS] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
