@@ -2,6 +2,7 @@ package app.ridematrix.dto;
 
 import app.ridematrix.entity.Visitors;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -28,6 +29,7 @@ public class VisitorResponseDTO
     private LocalDateTime timeOut;
     private long phoneNum;
     public boolean activeVistor;
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private GetResidentDataRequest getResidentDataRequest;
     private String flatNo;
 
