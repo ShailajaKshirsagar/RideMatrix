@@ -22,7 +22,6 @@ public class CustomUserServiceImpl implements CustomUserService, UserDetailsServ
     private BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
     @Override
     public String saveUser(CustomUser user) {
-        //here we need to encrypt the password
         user.setPassword(encoder.encode(user.getPassword()));
         userRepository.save(user);
         return "User saved SucessFully with user name " + user.getUsername();
