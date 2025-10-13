@@ -29,10 +29,8 @@ public class VehicleController
     @Autowired
     private ResidentService residentService;
 
-    //vehicle creation
     @PostMapping("/addVehicle")
     @Operation(summary = "Create new vehicle with existing resident")
-    //Here we have used dto and passed it -> dont want to expose the entire entity
     public ResponseEntity<String> createVehicle(@Valid @RequestBody CreateVehicleRequest request) {
         log.info("Received request to add vehicle for residentId: {}, regNum: {}");
         String msg = vehicleService.saveVehicle(request);
@@ -40,7 +38,6 @@ public class VehicleController
         return new ResponseEntity<>(msg, HttpStatus.CREATED);
     }
 
-    //get user details only using registration number not vehicle details .
     @GetMapping("/getUserData/{registrationNum}")
     @Operation(summary = "Get user Details with Registration number")
     public ResponseEntity<GetResidentDataRequest> getResidentDataByRegNum(

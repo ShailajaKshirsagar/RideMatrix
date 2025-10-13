@@ -37,7 +37,6 @@ public class SpringSecurityConfig
                 .csrf(csrf -> csrf.disable());
         return http.build();
     }
-
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
         return configuration.getAuthenticationManager();

@@ -17,7 +17,6 @@ public class CustomUserController {
     @Autowired
     private CustomUserService customUserService;
 
-    //save User
     @PostMapping("/addUser")
     public ResponseEntity<String> addUser(@RequestBody CustomUser user){
         String msg = customUserService.saveUser(user);
