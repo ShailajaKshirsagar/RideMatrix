@@ -27,9 +27,11 @@ public class Resident {
     private int id;
 
     @NotBlank(message = "First name is Required")
+    @JsonProperty("fName")
     private String fName;
 
     @NotBlank(message = "Last name is Required")
+    @JsonProperty("lName")
     private String lName;
 
     @Pattern(regexp = "^[A-Za-z0-9-]+$", message = "Flat number must be alphanumeric with optional hyphens")
@@ -42,7 +44,7 @@ public class Resident {
     @Email(message = "Email should be valid")
     private String email;
 
-    @NotBlank(message = "Resident Type is Required")
+    @NotNull(message = "Resident Type is Required")
     @Enumerated(EnumType.STRING)
     private ResidentType residentType;
 

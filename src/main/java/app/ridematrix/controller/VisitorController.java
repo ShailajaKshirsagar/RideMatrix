@@ -23,11 +23,9 @@ import java.util.List;
 @Tag(name = "Visitor Controller", description = "APIs to manage visitors and their vehicles")
 public class VisitorController
 {
-    //inject service into this
     @Autowired
     private VisitorService visitorService;
 
-    //API To post visitor
     @PostMapping("/addVisitor")
     @Operation(summary = "Add visitor ")
     public ResponseEntity<String> addVisitor(@Valid @RequestBody VisitorRequestDto visitorRequestDto ){
@@ -37,7 +35,6 @@ public class VisitorController
         return new ResponseEntity<>(msg, HttpStatus.CREATED);
     }
 
-    //Get visitors details with resident details by registeration number.
     @GetMapping("/getVisitorandResidentDetails/{vehicleRegNum}")
     @Operation(summary = "Get resident and visitor details by Vehicle Number")
     public ResponseEntity<VisitorResponseDTO> getVisitorAndResidentDetByVehNum(
@@ -52,7 +49,6 @@ public class VisitorController
         return new ResponseEntity<>(responseDTO,HttpStatus.OK);
     }
 
-    //API to update the end time of visitor by vehicle number using patch
     @PatchMapping("/updateOutTime/{vehicleRegNum}")
     @Operation(summary = "Update end time of visitor")
     public ResponseEntity<String> updateTimeOut(@PathVariable String vehicleRegNum) {
@@ -69,7 +65,6 @@ public class VisitorController
         }
     }
 
-    //API to get all active users in society
     @GetMapping("/getActiveVisitorsInSociety")
     @Operation(summary = "Get active visitor Details")
     public ResponseEntity<List<VisitorResponseDTO>> getAllActiveVisitors(

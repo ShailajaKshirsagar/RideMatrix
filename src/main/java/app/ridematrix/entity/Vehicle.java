@@ -37,7 +37,7 @@ public class Vehicle
     private String registrationNum;
     private String vColor;
 
-    @NotBlank(message = "Vehicle Type is Required")
+    @NotNull(message = "Vehicle Type is Required")
     @Enumerated(EnumType.STRING)
     private VehicleType vType;
     public enum VehicleType{
