@@ -15,6 +15,7 @@ import java.util.Map;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 
+//exception handler
 @RestControllerAdvice
 @Slf4j
 public class GlobalExceptionHandler {
